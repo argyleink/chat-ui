@@ -1,0 +1,18 @@
+.centered-demo {
+  height: 100vh;
+}
+
+.chat-ui {
+  box-shadow: 0 1rem 2rem hsl(0,0%,50%);
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    overflow: hidden;
+  }
+
+  .centered-demo .chat-ui {
+    width: 100vw;
+    height: 100vh;
+  }
+}

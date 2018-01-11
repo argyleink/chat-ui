@@ -1,0 +1,20 @@
+include ../mixins/link
+include ../mixins/og-meta
+include ../mixins/twitter-meta
+
+block config
+  - var pageTitle = 'Chat UI'
+
+doctype html
+html
+  include ../partials/head
+
+  block title
+    title= pageTitle
+
+  link(rel='stylesheet' href='/css/#{htmlWebpackPlugin.options.page}.css')
+
+  body
+    block content
+
+    script(src='/js/#{htmlWebpackPlugin.options.page}.js' async)

@@ -1,0 +1,136 @@
+.chat-ui {
+  width: 320px;
+  height: 480px;
+  background: hsl(0,0%,98%);
+
+  & > .chat-ui_scrollview {
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    flex: 2;
+  }
+
+  & > header {
+    height: 1.75rem;
+    background: white;
+    box-shadow: 0 0.25rem 0.25rem hsla(0,0%,0%,0.1);
+    overflow: hidden;
+    padding: 1rem 0.5rem;
+    z-index: 1;
+
+    & > span {
+      margin-left: 0.5rem;
+      margin-right: 2rem;
+
+      font-size: 1.4rem;
+    }
+
+    & > h5 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      line-height: 1.1;
+      color: hsl(0,0%,70%);
+
+      flex: 2;
+      margin: 0;
+    }
+  }
+
+  & > .chat-ui_scrollview > main {
+    height: 100%;
+
+    & > article {
+      margin: 0.25rem 3rem 0.25rem 0.5rem;
+
+      /* alternation styles */
+      &:nth-child(even) {
+        margin-left: 3rem;
+        margin-right: 0.5rem;
+
+        & > figure, & > section > h3 {
+          display: none;
+        }
+
+        & > section {
+          align-items: flex-end;
+
+          & > p {
+            background: hsl(10,100%,50%);
+            border-radius: 1rem 0.25rem 0.25rem 1rem;
+
+            &:first-of-type {
+              border-radius: 1rem 1rem 0.25rem 1rem;
+            }
+
+            &:last-child {
+              border-radius: 1rem 0.25rem 1rem 1rem;
+            }
+          }
+        }
+      }
+
+      & > figure {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 0.5rem 0 0;
+        background: hsl(0,0%,90%);
+        border-radius: 50%;
+      }
+
+      & > section {
+        flex: 2;
+
+        & > h3 {
+          margin: 0 0 0 0.75rem;
+          font-size: 0.8rem;
+          font-weight: lighter;
+          color: hsl(0,0%,60%);
+        }
+
+        & > p {
+          background-color: hsl(200,100%,50%);
+          color: white;
+          font-size: 0.9rem;
+
+          padding: 0.5rem 0.75rem;
+          margin: 0;
+          border-radius: 0.25rem 1rem 1rem 0.25rem;
+
+          &:first-of-type {
+            border-radius: 1rem 1rem 1rem 0.25rem;
+          }
+
+          &:last-child {
+            border-radius: 0.25rem 1rem 1rem 1rem;
+          }
+
+          &:not(:first-child) {
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  & > footer {
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    border-radius: 1rem;
+    border: 2px solid hsl(0,0%,90%);
+    box-shadow: 0 0.25rem 0.25rem hsl(0,0%,90%);
+    background: white;
+
+    & > textarea {
+      -webkit-appearance: none;
+      resize: none;
+
+      border: 0;
+      background: transparent;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
