@@ -3,7 +3,7 @@
 }
 
 .chat-ui {
-  box-shadow: 0 1rem 2rem hsl(0,0%,50%);
+  box-shadow: 0 1rem 2rem hsl(0,0%,60%);
 }
 
 @media screen and (orientation: portrait) {

@@ -1,20 +1,29 @@
 .chat-ui(grid='rows' vertically-distributed='equal')
   header(grid vertically-aligned='center' horizontally-distributed='between')
-    span ←
-    h5 Chat Demo
+    //- span ←
+    h5 Chat UI
+    figure.avatar: img(src='')
+
   .chat-ui_scrollview: main(grid='rows' horizontally-aligned='right')
     article(grid vertically-aligned='bottom')
-      figure: img(src='')
+      figure.avatar: img(src='')
       section(grid='rows')
-        h3 Bot
+        h3 ${bot_name}
         p Hi!
-        p I'm a bot
+        p I'm a bot 😉
         p Hopefully you find me useful some how
-    article(grid vertically-aligned='bottom')
-      figure: img(src='')
+    article(mine grid vertically-aligned='bottom')
+      figure.avatar: img(src='')
       section(grid='rows')
-        h3 Not Bot
+        h3 Not Bot 
         p I'm <i>NOT</i> a bot
+        p 😉
         p what kind of things can you do?
+    article(grid vertically-aligned='bottom')
+      figure.avatar: img(src='')
+      section(grid='rows')
+        h3 ${bot_name}
+        p ...
+
   footer(grid horizontally-distributed='equal')
-    textarea(placeholder='Say something...' autofocus)
+    textarea(placeholder='Say something...' rows='1' autofocus)

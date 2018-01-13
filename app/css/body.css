@@ -4,6 +4,6 @@
 body, html {
   font-family: system-ui;
   margin: 0;
-  background: hsl(0,0%,90%);
+  background: hsl(200,25%,90%);
   min-height: 100vh;
 }
