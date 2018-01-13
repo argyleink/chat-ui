@@ -4,6 +4,7 @@ const CopyWebpackPlugin   = require('copy-webpack-plugin')
 const CleanWebpackPlugin  = require('clean-webpack-plugin')
 const BrowserSyncPlugin   = require('browser-sync-webpack-plugin')
 const ExtractTextPlugin   = require('extract-text-webpack-plugin')
+const Jarvis              = require('webpack-jarvis')
 
 const PATHS = {
   output: `${__dirname}/public/`,
@@ -81,7 +82,8 @@ module.exports = {
       proxy:  'http://localhost:8080/'
     }, {
       reload: false
-    })
+    }),
+    new Jarvis()
   ],
   devtool: '#eval-source-map',
   devServer: { 
