@@ -1,0 +1,7 @@
+chat-avatar {
+  width: 2rem;
+  height: 2rem;
+  background: hsl(0,0%,90%);
+  border-radius: 50%;
+  margin: 0;
+}

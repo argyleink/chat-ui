@@ -1,3 +1,4 @@
 :root {
-  --shadow-on-bg: hsl(0,0%,80%);
+  --theme-bg: hsl(200,100%,50%);
+  --theme-text_color: white;
 }

@@ -1,0 +1,20 @@
+@import '../../../css/vars.css';
+
+chat-ui {
+  width: 320px;
+  height: 480px;
+  background: hsl(0,0%,98%);
+
+  &.loading {
+    & main {
+      visibility: hidden;
+    }
+  }
+
+  & > .chat-ui_scrollview {
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    flex: 2;
+  }
+}

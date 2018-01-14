@@ -1,0 +1,30 @@
+@import '../../../../css/vars.css';
+
+chat-titlebar {
+  height: 1.25rem;
+  background: var(--theme-bg, blue);
+  color: var(--theme-text_color, white);
+  box-shadow: 0 0.1rem 0.1rem hsla(0,0%,0%,0.1);
+  overflow: hidden;
+  padding: 1rem;
+  z-index: 1;
+
+  & > span {
+    margin-right: 2rem;
+    line-height: 1.1;
+    font-size: 1.4rem;
+  }
+
+  & > h5 {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.1;
+
+    flex: 2;
+    margin: 0;
+  }
+
+  & > figure {
+    margin: 0 0 0 auto;
+  }
+}

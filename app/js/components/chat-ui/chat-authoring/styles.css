@@ -1,0 +1,50 @@
+@import '../../../../css/vars.css';
+
+chat-authoring {
+  position: sticky;
+  bottom: 0.5rem;
+  box-sizing: border-box;
+
+  margin: 0.5rem;
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 1rem 1rem 2px;
+  box-shadow: 0.25rem 0.5rem 1rem hsla(0,0%,0%,20%);
+  background: white;
+
+  font-size: 0.9rem;
+  font-weight: lighter;
+  line-height: 1.4em;
+  caret-color: var(--theme-bg, blue);
+
+  width: calc(100% - 1rem);
+  transition: width 0.15s ease;
+
+  &:empty {
+    width: 50%;
+
+    &:after {
+      content: "Say Something..";
+
+      &:focus { content: ""; }
+    }
+  }
+
+  &:focus {
+    width: calc(100% - 1rem);
+    outline: none;
+  }
+
+  /*& > textarea {
+    -webkit-appearance: none;
+    resize: none;
+    white-space: normal;
+
+    border: 0;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }*/
+}
