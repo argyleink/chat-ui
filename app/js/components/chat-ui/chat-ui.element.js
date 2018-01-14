@@ -1,25 +1,19 @@
 import './chat-titlebar/chat-titlebar.element'
 import './chat-authoring/chat-authoring.element'
-import './chat-avatar/chat-avatar.element'
+import './chat-scrollview/chat-scrollview.element'
 import './chat-message/chat-message.element'
 import './chat-cluster/chat-cluster.element'
-
-import { $ } from '../../utilities/shorthands'
+import './chat-avatar/chat-avatar.element'
 
 import './styles.css'
 
 export default class ChatUI extends HTMLElement {
   createdCallback() {
-    this.classList.add('loading')
+    this.setAttribute('grid', 'rows')
+    this.setAttribute('vertically-distributed', 'equal')
   }
 
-  attachedCallback() {
-    this.scroller             = $('.chat-ui_scrollview')
-    this.scroller.scrollTop   = this.scroller.scrollHeight
-
-    this.classList.remove('loading')
-  }
-
+  attachedCallback() {}
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 }

@@ -1,0 +1,10 @@
+chat-scrollview {
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  flex: 2;
+
+  &.loading > main {
+    visibility: hidden;
+  }
+}

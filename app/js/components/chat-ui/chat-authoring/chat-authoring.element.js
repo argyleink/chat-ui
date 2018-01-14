@@ -1,15 +1,11 @@
 import './styles.css'
 
 export default class ChatAuthoring extends HTMLElement {
-  createdCallback() {
-    this.classList.add('loading')
-  }
-
   attachedCallback() {
-    this.classList.remove('loading')
     this.setAttribute('contenteditable', '')
   }
 
+  createdCallback() {}
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 }
