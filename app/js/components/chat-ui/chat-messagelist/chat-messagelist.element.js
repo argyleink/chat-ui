@@ -1,11 +1,14 @@
 import './styles.css'
 
-export default class ChatScrollview extends HTMLElement {
+export default class ChatMessagelist extends HTMLElement {
   attachedCallback() {
     this.classList.add('loading')
   }
 
   createdCallback() {
+    this.setAttribute('grid', 'rows')
+    this.setAttribute('horizontally-aligned', 'right')
+
     setTimeout(_ => {
       this.scrollTop = this.scrollHeight
       this.classList.remove('loading')
@@ -15,4 +18,4 @@ export default class ChatScrollview extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 }
 
-document.registerElement('chat-scrollview', ChatScrollview)
+document.registerElement('chat-messagelist', ChatMessagelist)

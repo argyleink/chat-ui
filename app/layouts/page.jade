@@ -13,8 +13,7 @@ html
     title= pageTitle
 
   link(rel='stylesheet' href='/css/#{htmlWebpackPlugin.options.page}.css')
+  script(src='/js/#{htmlWebpackPlugin.options.page}.js')
 
   body
     block content
-
-    script(src='/js/#{htmlWebpackPlugin.options.page}.js' async)

@@ -4,6 +4,7 @@ chat-message {
   background-color: var(--theme-bg, blue);
   color: var(--theme-text_color, white);
   font-size: 0.8rem;
+  line-height: 1.4;
 
   padding: 0.5rem 0.75rem;
   margin: 0;
@@ -19,5 +20,12 @@ chat-message {
 
   &:not(:first-child) {
     margin-top: 2px;
+  }
+}
+
+@media screen and (orientation: portrait),
+@media screen and (min-width:480px) {
+  chat-message {
+    font-size: 1rem;
   }
 }

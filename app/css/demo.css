@@ -6,12 +6,13 @@ chat-ui {
   box-shadow: 0 1rem 2rem hsl(0,0%,60%);
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait),
+@media screen and (min-width:480px) {
   body {
     overflow: hidden;
   }
 
-  .centered-demo .chat-ui {
+  .centered-demo chat-ui {
     width: 100vw;
     height: 100vh;
   }

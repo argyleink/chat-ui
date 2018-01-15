@@ -1,4 +1,3 @@
-import { $ } from '../../../utilities/shorthands'
 import './styles.css'
 
 export default class ChatCluster extends HTMLElement {
@@ -18,6 +17,13 @@ export default class ChatCluster extends HTMLElement {
 
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
+
+  addMessage(message) {
+    let new_message = document.createElement('chat-message')
+    new_message.innerHTML = message
+
+    this.children[1].appendChild(new_message)
+  }
 }
 
 document.registerElement('chat-cluster', ChatCluster)

@@ -6,11 +6,13 @@ export default class ChatAvatar extends HTMLElement {
 
     this.img = document.createElement('img')
     this.img.src = this.getAttribute('src')
-    this.appendChild(this.img)
   }
 
   attachedCallback() {
-    this.classList.remove('loading')
+    this.img.onload = () => {
+      this.appendChild(this.img)
+      this.classList.remove('loading')
+    }
   }
 
   detachedCallback() {}
