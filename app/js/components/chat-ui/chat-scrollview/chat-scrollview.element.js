@@ -7,12 +7,16 @@ export default class ChatScrollview extends HTMLElement {
 
   createdCallback() {
     setTimeout(_ => {
-      this.scrollTop = this.scrollHeight
+      this.scrollToLatest()
       this.classList.remove('loading')
     }, 1000)
   }
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
+
+  scrollToLatest() {
+    this.scrollTop = this.scrollHeight
+  }
 }
 
 document.registerElement('chat-scrollview', ChatScrollview)

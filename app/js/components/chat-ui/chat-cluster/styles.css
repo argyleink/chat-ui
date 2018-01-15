@@ -42,6 +42,10 @@ chat-cluster {
         background: hsl(200,100%,40%);
         border-radius: 1rem 0.25rem 0.25rem 1rem;
 
+        &[new] {
+          transform: translateX(1rem);
+        }
+
         &:first-of-type {
           border-radius: 1rem 1rem 0.25rem 1rem;
         }

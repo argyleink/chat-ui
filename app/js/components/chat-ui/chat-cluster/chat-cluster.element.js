@@ -9,8 +9,8 @@ export default class ChatCluster extends HTMLElement {
   }
 
   attachedCallback() {
-    this.message_list = this.querySelector('section')
-    this.message_list.setAttribute('grid', 'rows')
+    this.messages = this.querySelector('section')
+    this.messages.setAttribute('grid', 'rows')
 
     this.classList.remove('loading')
   }
@@ -18,11 +18,18 @@ export default class ChatCluster extends HTMLElement {
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
-  addMessage(message) {
-    let new_message = document.createElement('chat-message')
-    new_message.innerHTML = message
+  add(message) {
+    this.messages.appendChild(
+      this.render(message))
+  }
 
-    this.children[1].appendChild(new_message)
+  render(message) {
+    let new_message         = document.createElement('chat-message')
+    new_message.innerHTML   = message
+    
+    new_message.setAttribute('new', '')
+
+    return new_message
   }
 }
 

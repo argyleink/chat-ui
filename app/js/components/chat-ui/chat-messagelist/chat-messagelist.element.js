@@ -14,8 +14,13 @@ export default class ChatMessagelist extends HTMLElement {
       this.classList.remove('loading')
     }, 1000)
   }
+
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
+
+  addCluster() {
+    console.log('add cluster')
+  }
 }
 
 document.registerElement('chat-messagelist', ChatMessagelist)
