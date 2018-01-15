@@ -10,17 +10,17 @@ import 'ragrid'
 import './styles.css'
 
 export default class ChatUI extends HTMLElement {
-  attachedCallback() {
-    this.classList.add('loading')
-  }
-
   createdCallback() {
+    this.classList.add('loading')
+
     this.setAttribute('grid', 'rows')
     this.setAttribute('vertically-distributed', 'equal')
 
-    this.scrollview = this.querySelector('chat-scrollview')
-    this.messages   = this.querySelector('chat-messagelist')
+    this.Scrollview = this.querySelector('chat-scrollview')
+    this.Messages   = this.querySelector('chat-messagelist')
+  }
 
+  attachedCallback() {
     this.classList.remove('loading')
   }
 
@@ -28,27 +28,11 @@ export default class ChatUI extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   addMessage(payload) {
-    // latest.hasAttribute('mine') && !latest.hasAttribute('indeterminate')
-    // add to my current cluster (theirs is indeterminate, latest cluster is mine, newest message is mine)
-    // add to their cluster (their cluster is latest, newest message is theirs)
-    // start new cluster for me (their cluster is latest, newest message is mine)
-    // start new cluster for them (mine is latest, newest message is theirs)
-
-    // adds message to latest message cluster
-    let chats = payload.mine ?
-      this.querySelectorAll('chat-cluster[mine]') : 
-      this.querySelectorAll('chat-cluster:not([mine]):not([indeterminate])')
-
-    let latest_chat = chats[chats.length - 1]
-    latest_chat.add(payload.contents)
-
-    // scroll message into view
-    this.scrollview.scrollToLatest()
+    this.Messages.add(payload)
+    this.Scrollview.scrollToLatest()
   }
 
-  addCluster() {
-    this.messages.addCluster("chat-cluster(mine avatar='..' username='${bot_name}' message='foo')")
-  }
+  // TODO: set indeterminate cluster state
 }
 
 document.registerElement('chat-ui', ChatUI)

@@ -1,5 +1,9 @@
 import './styles.css'
 
+// TODO:
+// sending state
+// sent state
+
 export default class ChatMessage extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')

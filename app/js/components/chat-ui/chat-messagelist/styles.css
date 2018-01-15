@@ -1,6 +1,67 @@
 chat-messagelist {
+  /* padding for authoring component fixed position */
+  padding-bottom: 4rem;
+  padding-top: 1rem;
+}
 
-  &.loading > chat-cluster {
+/* parent (scrollview) is setting loading state we want to observe */
+.loading chat-messagelist {
+  /* hide all children except authoring component */
+  & > chat-cluster {
     visibility: hidden;
   }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    /* indeterminate animation */
+    animation: fade_pulse 2s linear infinite;
+
+    /* tombstones */
+    background-repeat: no-repeat;
+
+    background-size: 
+      2rem 2rem, 
+      175px 2rem,
+      2rem 2rem,
+      100px 2rem,
+      50px 2rem,
+      200px 2rem,
+      2rem 2rem,
+      150px 2rem,
+      30px 2rem;
+
+    background-position: 
+      0.5rem calc(100% - 4rem), 
+      3rem calc(100% - 4rem),
+      calc(100% - 0.5rem) calc(100% - 8rem),
+      calc(100% - 3rem) calc(100% - 8rem),
+      calc(100% - 3rem) calc(100% - 10.5rem),
+      calc(100% - 3rem) calc(100% - 13rem),
+      0.5rem calc(100% - 17rem),
+      3rem calc(100% - 17rem),
+      3rem calc(100% - 19.5rem);
+
+    background-image:
+      radial-gradient(circle 1rem, hsl(0,0%,90%) 99%, transparent 0),
+      linear-gradient(hsl(0,0%,90%) 2rem, transparent 0),
+      radial-gradient(circle 1rem, hsl(0,0%,90%) 99%, transparent 0),
+      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
+      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
+      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
+      radial-gradient(circle 1rem, hsl(0,0%,90%) 99%, transparent 0),
+      linear-gradient(hsl(0,0%,90%) 2rem, transparent 0),
+      linear-gradient(hsl(0,0%,90%) 2rem, transparent 0);
+  }
+}
+
+@keyframes fade_pulse {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 1; }
 }

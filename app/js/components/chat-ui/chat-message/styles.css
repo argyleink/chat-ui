@@ -25,11 +25,11 @@ chat-message {
   &[new] {
     opacity: 0;
     transform: translateX(-1rem);
-    animation: fadein 0.5s ease forwards;
+    animation: slide_in 0.5s ease forwards;
   }
 }
 
-@keyframes fadein {
+@keyframes slide_in {
   to {
     opacity: 1;
     transform: translateX(0);

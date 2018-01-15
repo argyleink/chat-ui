@@ -6,6 +6,8 @@ export default class ChatAuthoring extends HTMLElement {
   }
 
   createdCallback() {
+    this.ChatUI = document.querySelector('chat-ui')
+
     this.addEventListener('keydown', e => {
       let key = e.which || e.keyCode
 
@@ -20,7 +22,11 @@ export default class ChatAuthoring extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   send() {
-    console.info(this.innerHTML)
+    this.ChatUI.addMessage({
+      mine:     true,
+      contents: this.innerHTML
+    })
+
     this.innerHTML = ''
   }
 }

@@ -20,10 +20,10 @@ export default class ChatCluster extends HTMLElement {
 
   add(message) {
     this.messages.appendChild(
-      this.render(message))
+      this.createMessage(message))
   }
 
-  render(message) {
+  createMessage(message) {
     let new_message         = document.createElement('chat-message')
     new_message.innerHTML   = message
     
