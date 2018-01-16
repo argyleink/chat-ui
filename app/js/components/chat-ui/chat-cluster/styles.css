@@ -18,7 +18,7 @@ chat-cluster {
     flex: 2;
 
     & > h3 {
-      margin: 0 0 0 0.75rem;
+      margin: 0 0 0 0.7rem;
       font-size: 0.7rem;
       font-weight: lighter;
       color: hsl(0,0%,60%);

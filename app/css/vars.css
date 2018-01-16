@@ -1,3 +1,4 @@
+/* TODO: move theme vars into component styles */
 :root {
   --theme-bg: hsl(200,100%,50%);
   --theme-text_color: white;

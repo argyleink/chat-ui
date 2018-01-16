@@ -27,12 +27,37 @@ export default class ChatUI extends HTMLElement {
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
-  addMessage(payload) {
+  newMessage(payload) {
     this.Messages.add(payload)
     this.Scrollview.scrollToLatest()
   }
 
   // TODO: set indeterminate cluster state
+  writing(isWriting = true) {
+    if (isWriting) {
+      let indeterminateFeedback = this.Messages.newCluster({
+        author: {
+          avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
+        }
+      })
+      indeterminateFeedback.setAttribute('indeterminate', '')
+      
+      indeterminateFeedback
+        .querySelector('section')
+        .appendChild(
+          indeterminateFeedback.createMessage({
+            type: 'text',
+            contents: '...'
+          }))
+
+      this.Messages.appendChild(indeterminateFeedback)
+      this.Scrollview.scrollToLatest()
+    }
+    else {
+      let indeterminateFeedback = this.querySelector('chat-cluster[indeterminate]')
+      if (indeterminateFeedback) indeterminateFeedback.remove()
+    }
+  }
 }
 
 document.registerElement('chat-ui', ChatUI)

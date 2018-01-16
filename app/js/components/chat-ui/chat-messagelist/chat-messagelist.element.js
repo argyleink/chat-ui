@@ -6,6 +6,8 @@ export default class ChatMessagelist extends HTMLElement {
   createdCallback() {
     this.setAttribute('grid', 'rows')
     this.setAttribute('horizontally-aligned', 'right')
+
+    // loading strategy for when initialized but empty
   }
 
   detachedCallback() {}
@@ -23,12 +25,24 @@ export default class ChatMessagelist extends HTMLElement {
         target_cluster = latest_cluster
       // add to my current cluster and not a new one if they're only typing
       else if (latest_cluster.hasAttribute('indeterminate')) {
-        let mines       = this.querySelectorAll('chat-cluster[mine]')
-        target_cluster  = mines[mines.length - 1]
+        // double check edge case (friend is writing, also latest cluster)
+        var doublecheck = this.querySelectorAll('chat-cluster:not([indeterminate])')
+        // is the 2nd from end of the list mine or not?
+        if (!doublecheck[doublecheck.length - 1].hasAttribute('mine')) {
+          target_cluster = this.newCluster(payload)
+          this.appendChild(target_cluster)
+        }
+        else {
+          // passed double check, target cluster is my most recent cluster
+          let mines       = this.querySelectorAll('chat-cluster[mine]')
+          target_cluster  = mines[mines.length - 1]
+        }
       }
       // start new cluster for me (their cluster is latest, newest message is mine)
-      else 
+      else {
         target_cluster = this.newCluster(payload)
+        this.appendChild(target_cluster)
+      }
     }
     else {
       // add to their cluster (their cluster is latest, message is theirs)
@@ -41,12 +55,14 @@ export default class ChatMessagelist extends HTMLElement {
         latest_cluster.removeAttribute('indeterminate')
       }
       // start new cluster for them (mine is latest, newest message is theirs)
-      else
+      else {
         target_cluster = this.newCluster(payload)
+        this.appendChild(target_cluster)
+      }
     }
 
     // finally pass payload to appropriate cluster
-    target_cluster.add(payload.contents)
+    target_cluster.add(payload)
   }
 
   newCluster({mine = false, author = ''}) {
@@ -60,8 +76,6 @@ export default class ChatMessagelist extends HTMLElement {
         <h3>${author.name || ''}</h3>
       </section>
     `
-
-    this.appendChild(cluster)
 
     return cluster
   }

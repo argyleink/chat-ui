@@ -1,5 +1,7 @@
 @import '../../../css/vars.css';
 
+/* TODO: Theming with var() */
+
 chat-ui {
   width: 320px;
   height: 480px;
