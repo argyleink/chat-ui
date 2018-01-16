@@ -1,6 +1,6 @@
 setTimeout(()=> {
   document.querySelector('chat-ui').writing()
-}, 2000)
+}, 2500)
 
 setTimeout(()=> {
   document.querySelector('chat-ui').newMessage({
@@ -20,4 +20,4 @@ setTimeout(()=> {
     type: 'html',
     contents: 'I can do quite a bit'
   })
-}, 6500)
+}, 5500)

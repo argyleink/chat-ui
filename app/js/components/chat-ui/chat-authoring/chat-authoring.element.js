@@ -29,6 +29,7 @@ export default class ChatAuthoring extends HTMLElement {
   send() {
     this.ChatUI.newMessage({
       mine:     true,
+      type:     'html',
       contents: this.innerHTML
     })
 

@@ -9,7 +9,7 @@ export default class ChatScrollview extends HTMLElement {
     setTimeout(_ => {
       this.scrollToLatest()
       this.classList.remove('loading')
-    }, 1000)
+    }, 1500)
   }
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}

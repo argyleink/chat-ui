@@ -9,6 +9,9 @@ chat-titlebar {
   padding: 1rem;
   z-index: 1;
 
+  transform: translateY(-120%);
+  animation: slide_in_down 0.15s var(--easing-quick) 1.2s forwards;
+
   & > span {
     margin-right: 2rem;
     line-height: 1.1;
@@ -26,5 +29,11 @@ chat-titlebar {
 
   & > figure {
     margin: 0 0 0 auto;
+  }
+}
+
+@keyframes slide_in_down {
+  to {
+    transform: translateY(0);
   }
 }

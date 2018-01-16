@@ -19,7 +19,7 @@ chat-authoring {
   line-height: 1.4em;
 
   width: calc(100% - 1rem);
-  transition: width 0.15s ease;
+  transition: width 0.15s var(--easing-quick);
 
   &:empty {
     width: 50%;
