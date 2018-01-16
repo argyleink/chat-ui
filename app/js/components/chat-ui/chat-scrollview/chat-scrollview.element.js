@@ -14,7 +14,7 @@ export default class ChatScrollview extends HTMLElement {
 
     // show/hide based on scroll direction
     this.onscroll = e => {
-      if (this.oldScroll > e.currentTarget.scrollTop && this.scrollTop != this.scrollHeight)
+      if (this.oldScroll > e.currentTarget.scrollTop && this.clientHeight + this.scrollTop != this.scrollHeight)
         document.querySelector('chat-titlebar').hide()
       else
         document.querySelector('chat-titlebar').show()

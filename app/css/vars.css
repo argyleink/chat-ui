@@ -1,6 +1,9 @@
 /* TODO: move theme vars into component styles */
 :root {
-  --theme-bg: hsl(200,100%,50%);
+  --theme-bg: hsl(200, 100%, 50%);
+  --theme-compliment: hsl(25, 90%, 50%);
+
   --theme-text_color: white;
+
   --easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }

@@ -48,7 +48,7 @@ chat-cluster {
       align-items: flex-end;
 
       & > chat-message {
-        background: hsl(200,100%,40%);
+        background: var(--theme-compliment);
         border-radius: 1rem 0.25rem 0.25rem 1rem;
 
         &[new] {
