@@ -36,6 +36,17 @@ chat-message {
   }
 }
 
+@keyframes slide_out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+}
+
 @media screen and (orientation: portrait),
 @media screen and (min-width:480px) {
   chat-message {

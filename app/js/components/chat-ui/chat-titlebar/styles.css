@@ -7,10 +7,19 @@ chat-titlebar {
   box-shadow: 0 0.1rem 1rem hsla(0,0%,0%,40%);
   overflow: hidden;
   padding: 1rem;
-  z-index: 1;
 
-  transform: translateY(-120%);
-  animation: slide_in_down 0.15s var(--easing-quick) 1.2s forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  will-change: transform;
+  transition: transform 0.15s var(--easing-quick);
+
+  &[hide] {
+    transform: translateY(-120%);
+  }
 
   & > span {
     margin-right: 2rem;
@@ -29,11 +38,5 @@ chat-titlebar {
 
   & > figure {
     margin: 0 0 0 auto;
-  }
-}
-
-@keyframes slide_in_down {
-  to {
-    transform: translateY(0);
   }
 }

@@ -29,6 +29,9 @@ export default class ChatCluster extends HTMLElement {
     
     new_message.setAttribute('new', '')
 
+    new_message.addEventListener('animationend', e =>
+      new_message.removeAttribute('new'))
+
     return new_message
   }
 }

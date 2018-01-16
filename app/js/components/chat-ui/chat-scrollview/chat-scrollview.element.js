@@ -6,10 +6,21 @@ export default class ChatScrollview extends HTMLElement {
   }
 
   createdCallback() {
+    // TODO: watch a real scenario for timing of this
     setTimeout(_ => {
       this.scrollToLatest()
       this.classList.remove('loading')
     }, 1500)
+
+    // show/hide based on scroll direction
+    this.onscroll = e => {
+      if (this.oldScroll > e.currentTarget.scrollTop && this.scrollTop != this.scrollHeight)
+        document.querySelector('chat-titlebar').hide()
+      else
+        document.querySelector('chat-titlebar').show()
+
+      this.oldScroll = e.currentTarget.scrollTop
+    }
   }
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}

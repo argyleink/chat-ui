@@ -24,6 +24,14 @@ export default class ChatTitlebar extends HTMLElement {
       <chat-avatar src='${this.getAttribute('avatar')}'></chat-avatar>
     `
   }
+
+  show() {
+    this.removeAttribute('hide')
+  }
+
+  hide() {
+    this.setAttribute('hide', '')
+  }
 }
 
 document.registerElement('chat-titlebar', ChatTitlebar)

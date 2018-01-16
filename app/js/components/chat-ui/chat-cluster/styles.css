@@ -4,10 +4,19 @@ chat-cluster {
   margin: 0.25rem 3rem 0.75rem 0.5rem;
   align-self: flex-start;
 
-  &[indeterminate] chat-message {
-    background: var(--theme-text_color);
-    color: var(--theme-bg);
-    box-shadow: 0 0.25rem 0.25rem hsl(0,0%,90%);
+  &[indeterminate] {
+    /*position: absolute;*/
+
+    & chat-message {
+      background: var(--theme-text_color);
+      color: var(--theme-bg);
+      box-shadow: 0 0.25rem 0.25rem hsl(0,0%,90%);
+
+      &:after {
+        content: ".";
+        animation: slide_out 0.5s ease alternate infinite;
+      }
+    }
   }
 
   & > chat-avatar {
@@ -54,6 +63,18 @@ chat-cluster {
           border-radius: 1rem 0.25rem 1rem 1rem;
         }
       }
+    }
+  }
+
+  &[removed] {
+    & chat-avatar {
+      opacity: 0;
+      transform: scale3d(0.1,0.1,1);
+      transition: transform 0.4s var(--easing-quick), opacity 0.5s ease;
+    }
+
+    & chat-message {
+      animation: slide_out 0.5s var(--easing-quick);
     }
   }
 }

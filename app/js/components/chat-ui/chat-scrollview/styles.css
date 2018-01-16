@@ -2,5 +2,10 @@ chat-scrollview {
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
-  flex: 2;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

@@ -13,8 +13,8 @@ export default class ChatUI extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')
 
-    this.setAttribute('grid', 'rows')
-    this.setAttribute('vertically-distributed', 'equal')
+    // this.setAttribute('grid', 'rows')
+    // this.setAttribute('vertically-distributed', 'equal')
 
     this.Scrollview = this.querySelector('chat-scrollview')
     this.Messages   = this.querySelector('chat-messagelist')
@@ -47,7 +47,7 @@ export default class ChatUI extends HTMLElement {
         .appendChild(
           indeterminateFeedback.createMessage({
             type: 'text',
-            contents: '...'
+            contents: '..'
           }))
 
       this.Messages.appendChild(indeterminateFeedback)
@@ -55,7 +55,12 @@ export default class ChatUI extends HTMLElement {
     }
     else {
       let indeterminateFeedback = this.querySelector('chat-cluster[indeterminate]')
-      if (indeterminateFeedback) indeterminateFeedback.remove()
+      if (!indeterminateFeedback) return
+      indeterminateFeedback.setAttribute('removed', '')
+      indeterminateFeedback
+        .querySelector('chat-message')
+        .addEventListener('animationend', e => 
+          indeterminateFeedback.remove())
     }
   }
 }
