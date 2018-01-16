@@ -37,6 +37,7 @@ export default class ChatUI extends HTMLElement {
     if (isWriting) {
       let indeterminateFeedback = this.Messages.newCluster({
         author: {
+          name: '${bot_name}',
           avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
         }
       })

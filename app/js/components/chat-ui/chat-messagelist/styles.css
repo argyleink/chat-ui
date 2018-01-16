@@ -47,15 +47,15 @@ chat-messagelist {
       3rem calc(100% - 19.5rem);
 
     background-image:
-      radial-gradient(circle 1rem, hsl(0,0%,90%) 99%, transparent 0),
-      linear-gradient(hsl(0,0%,90%) 2rem, transparent 0),
-      radial-gradient(circle 1rem, hsl(0,0%,90%) 99%, transparent 0),
+      radial-gradient(circle 1rem, hsl(0,0%,85%) 99%, transparent 0),
       linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
+      radial-gradient(circle 1rem, hsl(0,0%,85%) 99%, transparent 0),
+      linear-gradient(hsl(0,0%,80%) 2rem, transparent 0),
+      linear-gradient(hsl(0,0%,80%) 2rem, transparent 0),
+      linear-gradient(hsl(0,0%,80%) 2rem, transparent 0),
+      radial-gradient(circle 1rem, hsl(0,0%,85%) 99%, transparent 0),
       linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
-      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
-      radial-gradient(circle 1rem, hsl(0,0%,90%) 99%, transparent 0),
-      linear-gradient(hsl(0,0%,90%) 2rem, transparent 0),
-      linear-gradient(hsl(0,0%,90%) 2rem, transparent 0);
+      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0);
   }
 }
 

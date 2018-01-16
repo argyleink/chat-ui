@@ -27,6 +27,10 @@ chat-message {
     transform: translateX(-1rem);
     animation: slide_in 0.5s var(--easing-quick) forwards;
   }
+
+  & img {
+    max-width: 100%;
+  }
 }
 
 @keyframes slide_in {

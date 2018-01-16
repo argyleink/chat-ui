@@ -1,7 +1,7 @@
 /* TODO: move theme vars into component styles */
 :root {
   --theme-bg: hsl(200, 100%, 50%);
-  --theme-compliment: color(var(--theme-bg) shade(25%));
+  --theme-compliment: color(var(--theme-bg) hue(+200));
 
   --theme-text_color: white;
 

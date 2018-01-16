@@ -5,7 +5,9 @@ chat-cluster {
   align-self: flex-start;
 
   &[indeterminate] {
-    /*position: absolute;*/
+    & h3 {
+      display: none;
+    }
 
     & chat-message {
       background: var(--theme-text_color);
