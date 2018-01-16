@@ -1,4 +1,6 @@
-import 'ragrid'
 import '../css/body.css'
 
-import { ChatUI } from './components/chat-ui/chat-ui.element'
+import 'ragrid'
+import './components/chat-ui/chat-ui.element'
+
+import './narrative'

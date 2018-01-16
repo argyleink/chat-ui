@@ -2,6 +2,7 @@ chat-ui
   chat-titlebar(title='Chat UI' avatar='https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg')
 
   chat-scrollview: chat-messagelist
+    //- chat-cluster(mine avatar='..' username='${bot_name}' message='foo')
     chat-cluster
       chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
       section
@@ -9,7 +10,6 @@ chat-ui
         chat-message Hi!
         chat-message I'm a bot 😉
         chat-message Hopefully you find me useful some how
-    //- chat-cluster(mine avatar='..' username='${bot_name}' message='foo')
     chat-cluster(mine)
       chat-avatar(src='')
       section
@@ -30,10 +30,5 @@ chat-ui
       section
         h3 Not Bot 
         chat-message Well played
-    chat-cluster(indeterminate)
-      chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
-      section
-        h3 ${bot_name}
-        chat-message ...
 
   div: chat-authoring

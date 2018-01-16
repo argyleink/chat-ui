@@ -6,7 +6,6 @@ chat-messagelist {
 
 /* parent (scrollview) is setting loading state we want to observe */
 .loading chat-messagelist {
-  /* hide all children except authoring component */
   & > chat-cluster {
     visibility: hidden;
   }

@@ -27,7 +27,7 @@ export default class ChatAuthoring extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   send() {
-    this.ChatUI.addMessage({
+    this.ChatUI.newMessage({
       mine:     true,
       contents: this.innerHTML
     })

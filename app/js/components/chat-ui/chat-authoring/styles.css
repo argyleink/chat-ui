@@ -35,17 +35,4 @@ chat-authoring {
     width: calc(100% - 1rem);
     outline: none;
   }
-
-  /*& > textarea {
-    -webkit-appearance: none;
-    resize: none;
-    white-space: normal;
-
-    border: 0;
-    background: transparent;
-
-    &:focus {
-      outline: none;
-    }
-  }*/
 }

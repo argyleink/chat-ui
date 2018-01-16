@@ -50,9 +50,19 @@ export default class ChatMessagelist extends HTMLElement {
         target_cluster = latest_cluster
       // add to their indeterminate cluster, remove indeterminate state
       else if (latest_cluster.hasAttribute('indeterminate')) {
-        target_cluster = latest_cluster
-        latest_cluster.querySelector('chat-message').remove()
-        latest_cluster.removeAttribute('indeterminate')
+        // double check that the cluster above the indeterminate cluster is not mine
+        var doublecheck = this.querySelectorAll('chat-cluster:not([indeterminate])')
+        if (!doublecheck[doublecheck.length - 1].hasAttribute('mine')) {
+          target_cluster = doublecheck[doublecheck.length - 1]
+          // we're not indeterminate anymore
+          latest_cluster.remove()
+        }
+        else {
+          // replace the message since it's already in a new cluster
+          target_cluster = latest_cluster
+          latest_cluster.querySelector('chat-message').remove()
+          latest_cluster.removeAttribute('indeterminate')
+        }
       }
       // start new cluster for them (mine is latest, newest message is theirs)
       else {
