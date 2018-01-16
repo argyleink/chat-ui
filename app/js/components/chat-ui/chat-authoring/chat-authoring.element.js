@@ -8,6 +8,11 @@ export default class ChatAuthoring extends HTMLElement {
   createdCallback() {
     this.ChatUI = document.querySelector('chat-ui')
 
+    this.addEventListener('focus', e => {
+      // dont use query selector, crawl parents?
+      document.querySelector('chat-scrollview').scrollToLatest()
+    })
+
     this.addEventListener('keydown', e => {
       let key = e.which || e.keyCode
 

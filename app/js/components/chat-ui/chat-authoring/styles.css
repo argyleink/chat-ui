@@ -1,7 +1,7 @@
 @import '../../../../css/vars.css';
 
 chat-authoring {
-  position: fixed;
+  position: absolute;
   bottom: 0.5rem;
   right: 0;
   box-sizing: border-box;
