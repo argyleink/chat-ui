@@ -26,6 +26,7 @@
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "postcss": "^6.0.14",
+    "postcss-color-function": "^4.0.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.9",
