@@ -1,6 +1,8 @@
 setTimeout(() => {
-  document.querySelector('chat-ui').onMessage(payload =>
-    console.log('payload:', payload))
+  document
+    .querySelector('chat-ui')
+    .addEventListener('outbound-message', payload =>
+      console.log('payload:', payload))
 }, 500)
 
 // intro

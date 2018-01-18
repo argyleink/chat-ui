@@ -13,7 +13,6 @@ export default class ChatUI extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')
 
-    this.callbacks  = []
     this.Scrollview = this.querySelector('chat-scrollview')
     this.Messages   = this.querySelector('chat-messagelist')
   }
@@ -28,16 +27,10 @@ export default class ChatUI extends HTMLElement {
   newMessage(payload) {
     this.Messages.add(payload)
     this.Scrollview.scrollToLatest()
-    if (payload.mine) outgoing(payload)
-  }
-
-  onMessage(cb) {
-    this.callbacks.push(cb)
-  }
-
-  outgoing(payload) {
-    this.callbacks.forEach(cb => 
-      cb(payload))
+    
+    if (payload.mine) 
+      this.dispatchEvent(
+        new CustomEvent('outbound-message', { detail: payload }))
   }
 
   // TODO: set indeterminate cluster state

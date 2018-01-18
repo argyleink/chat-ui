@@ -47,6 +47,16 @@ document.querySelector('chat-ui')
 
 
 
+**Listen to what the user wrote**
+
+```javascript
+document.querySelector('chat-ui')
+  .addEventListener('outbound-message', payload =>
+    console.info('custom event from component', payload))
+```
+
+
+
 **Friend is writing**
 
 ```javascript
