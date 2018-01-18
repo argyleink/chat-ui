@@ -1,32 +1,37 @@
-// intro
-setTimeout(()=> {
-  document.querySelector('chat-ui').writing()
-}, 2500)
+setTimeout(() => {
+  document.querySelector('chat-ui').onMessage(payload =>
+    console.log('payload:', payload))
+}, 500)
 
-setTimeout(()=> {
+// intro
+setTimeout(() => {
+  document.querySelector('chat-ui').writing()
+}, 3000)
+
+setTimeout(() => {
   document.querySelector('chat-ui').newMessage({
     mine: false, 
     type: 'html',
-    contents: 'So, look alright?'
+    contents: '<b>Hello</b>!<br>Look HTML works 👍'
   })
 }, 4000)
 
-setTimeout(()=> {
+setTimeout(() => {
   document.querySelector('chat-ui').writing()
-}, 4500)
+}, 5500)
 
-setTimeout(()=> {
+setTimeout(() => {
   document.querySelector('chat-ui').newMessage({
     mine: false, 
     type: 'html',
-    contents: 'I can do quite a bit'
+    contents: 'In <pre><code>./js/utilities/narrative.js</code></pre> you can see the code running this ghost writing.'
   })
-}, 5500)
+}, 7000)
 
 // rando looks like bot is about to talk, but doesnt :troll:
-setTimeout(()=> {
+setTimeout(() => {
   document.querySelector('chat-ui').writing()
 }, 25000)
-setTimeout(()=> {
+setTimeout(() => {
   document.querySelector('chat-ui').writing(false)
 }, 28000)

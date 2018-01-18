@@ -1,8 +1,9 @@
 @import '../../../../css/vars.css';
 
 chat-message {
-  background-color: var(--theme-bg, blue);
-  color: var(--theme-text_color, white);
+  /* background-color: var(--theme-bg, blue); */
+  /* color: var(--theme-text_color, white); */
+  background-color: white;
   font-size: 0.8rem;
   line-height: 1.4;
 
@@ -19,7 +20,7 @@ chat-message {
   }
 
   &:not(:first-child) {
-    margin-top: 2px;
+    margin-top: 3px;
   }
 
   &[new] {
@@ -30,6 +31,31 @@ chat-message {
 
   & img {
     max-width: 100%;
+  }
+
+  & pre {
+    display: inline;
+    background: hsla(0,0%,0%,10%);
+    border-radius: 0.25rem;
+  }
+}
+
+[mine] chat-message {
+  /* background: var(--theme-compliment); */
+  background: hsl(0,0%,85%);
+  border-radius: 1rem 0.25rem 0.25rem 1rem;
+  box-shadow: inset 0 -0.1rem 1rem hsl(0,0%,80%);
+
+  &[new] {
+    transform: translateX(1rem);
+  }
+
+  &:first-of-type {
+    border-radius: 1rem 1rem 0.25rem 1rem;
+  }
+
+  &:last-child:not(:first-of-type) {
+    border-radius: 1rem 0.25rem 1rem 1rem;
   }
 }
 
@@ -51,8 +77,7 @@ chat-message {
   }
 }
 
-@media screen and (orientation: portrait),
-@media screen and (min-width:480px) {
+@media screen and (max-width:480px) {
   chat-message {
     font-size: 1rem;
   }

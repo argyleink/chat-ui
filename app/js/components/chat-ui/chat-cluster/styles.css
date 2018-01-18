@@ -36,35 +36,17 @@ chat-cluster {
     }
   }
 
-  /* alternation styles */
   &[mine] {
     margin-left: 3rem;
     margin-right: 0.5rem;
     align-self: flex-end;
 
-    & > chat-avatar, & > section > h3 {
+    & > section > h3 {
       display: none;
     }
 
     & > section {
       align-items: flex-end;
-
-      & > chat-message {
-        background: var(--theme-compliment);
-        border-radius: 1rem 0.25rem 0.25rem 1rem;
-
-        &[new] {
-          transform: translateX(1rem);
-        }
-
-        &:first-of-type {
-          border-radius: 1rem 1rem 0.25rem 1rem;
-        }
-
-        &:last-child:not(:first-of-type) {
-          border-radius: 1rem 0.25rem 1rem 1rem;
-        }
-      }
     }
   }
 

@@ -5,7 +5,7 @@
 chat-ui {
   width: 320px;
   height: 480px;
-  background: hsl(0,0%,98%);
+  background: hsl(0,0%,90%);
   overflow: hidden;
   position: relative;
 }

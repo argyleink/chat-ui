@@ -16,3 +16,7 @@ chat-avatar {
     background: hsl(0,0%,90%);
   }
 }
+
+[mine] chat-avatar {
+  display: none;
+}

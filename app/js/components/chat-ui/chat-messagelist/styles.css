@@ -1,5 +1,4 @@
 chat-messagelist {
-  /* padding for authoring component fixed position */
   padding-bottom: 4rem;
   padding-top: 1rem;
 }
@@ -16,7 +15,7 @@ chat-messagelist {
     top: 0;
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: 2rem;
 
     /* indeterminate animation */
     animation: fade_pulse 2s linear infinite;
