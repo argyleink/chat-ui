@@ -2,11 +2,15 @@ import { $ } from './shorthands'
 
 let ChatUI
 
+// simulate loading
 setTimeout(() => {
   ChatUI = $('chat-ui') // dumb stashing it like this, need to tie into lifecycle hook
+  
+  ChatUI.init()
+
   ChatUI.addEventListener('outbound-message', payload =>
     console.log('payload:', payload))
-}, 500)
+}, 1500)
 
 // intro
 setTimeout(() => {
@@ -23,7 +27,7 @@ setTimeout(() => {
 
 setTimeout(() => {
   ChatUI.writing()
-}, 6000)
+}, 5000)
 
 setTimeout(() => {
   ChatUI.newMessage({

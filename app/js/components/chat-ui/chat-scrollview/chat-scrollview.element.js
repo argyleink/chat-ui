@@ -2,19 +2,10 @@ import { $ } from 'utilities/shorthands'
 import './styles.css'
 
 export default class ChatScrollview extends HTMLElement {
-  attachedCallback() {
-    this.classList.add('loading')
-  }
+  attachedCallback() {}
 
   createdCallback() {
     this.Titlebar = $('chat-titlebar')
-
-    // TODO: watch a real scenario for timing of this
-    // for now, simulate slow load time
-    setTimeout(_ => {
-      this.scrollToLatest()
-      this.classList.remove('loading')
-    }, 1500)
 
     // show/hide based on scroll direction
     this.onscroll = e => {

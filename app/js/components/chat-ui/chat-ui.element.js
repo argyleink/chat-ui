@@ -19,14 +19,19 @@ export default class ChatUI extends HTMLElement {
     this.Messages   = $('chat-messagelist', this)
   }
 
-  attachedCallback() {
-    this.classList.remove('loading')
-  }
-
+  attachedCallback() {}
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
-  init() {}
+  init(messages) {
+    // create vnode holder for loop result
+    // iterate over messages
+    // create clusters for sequental alternating messages
+    // append clusters to vnode
+    // drop vnode results into this.innerHTML
+    this.Scrollview.scrollToLatest()
+    this.classList.remove('loading')
+  }
 
   newMessage(payload) {
     this.Messages.add(payload)
@@ -37,7 +42,6 @@ export default class ChatUI extends HTMLElement {
         new CustomEvent('outbound-message', { detail: payload }))
   }
 
-  // TODO: set indeterminate cluster state
   writing(isWriting = true) {
     if (isWriting) {
       let indeterminateFeedback = this.Messages.newCluster({
