@@ -23,6 +23,7 @@ export default class ChatCluster extends HTMLElement {
       this.createMessage(message))
   }
 
+  // TODO: move this logic to the ChatMessage class
   createMessage(message) {
     let new_message     = document.createElement('chat-message')
     new_message.message = message
