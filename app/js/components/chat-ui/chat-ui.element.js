@@ -6,7 +6,7 @@ import './chat-message/chat-message.element'
 import './chat-cluster/chat-cluster.element'
 import './chat-avatar/chat-avatar.element'
 
-import { $ } from '../../utilities/shorthands'
+import { $ } from 'utilities/shorthands'
 
 import 'ragrid'
 import './styles.css'

@@ -27,6 +27,9 @@ module.exports = {
     filename: 'js/[name].js',
     pathinfo: true
   },
+  resolve: {
+    modules: [path.resolve(__dirname, 'app/js'), 'node_modules'],
+  },
   module: { rules: [
     {
       test:     /\.js$/,

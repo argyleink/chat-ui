@@ -1,4 +1,4 @@
-import { $, $$ } from '../../../utilities/shorthands'
+import { $, $$ } from 'utilities/shorthands'
 import './styles.css'
 
 export default class ChatMessagelist extends HTMLElement {
