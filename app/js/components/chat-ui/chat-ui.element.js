@@ -6,15 +6,18 @@ import './chat-message/chat-message.element'
 import './chat-cluster/chat-cluster.element'
 import './chat-avatar/chat-avatar.element'
 
+import { $ } from '../../utilities/shorthands'
+
 import 'ragrid'
 import './styles.css'
+
 
 export default class ChatUI extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')
 
-    this.Scrollview = this.querySelector('chat-scrollview')
-    this.Messages   = this.querySelector('chat-messagelist')
+    this.Scrollview = $('chat-scrollview', this)
+    this.Messages   = $('chat-messagelist', this)
   }
 
   attachedCallback() {
@@ -44,8 +47,7 @@ export default class ChatUI extends HTMLElement {
       })
       indeterminateFeedback.setAttribute('indeterminate', '')
       
-      indeterminateFeedback
-        .querySelector('section')
+      $('section', indeterminateFeedback)
         .appendChild(
           indeterminateFeedback.createMessage({
             type: 'text',
@@ -56,11 +58,12 @@ export default class ChatUI extends HTMLElement {
       this.Scrollview.scrollToLatest()
     }
     else {
-      let indeterminateFeedback = this.querySelector('chat-cluster[indeterminate]')
+      let indeterminateFeedback = $('chat-cluster[indeterminate]', this)
       if (!indeterminateFeedback) return
+
       indeterminateFeedback.setAttribute('removed', '')
-      indeterminateFeedback
-        .querySelector('chat-message')
+
+      $('chat-message', indeterminateFeedback)
         .addEventListener('animationend', e => 
           indeterminateFeedback.remove())
     }

@@ -20,7 +20,7 @@ setTimeout(() => {
 
 setTimeout(() => {
   document.querySelector('chat-ui').writing()
-}, 5500)
+}, 6000)
 
 setTimeout(() => {
   document.querySelector('chat-ui').newMessage({
@@ -28,7 +28,7 @@ setTimeout(() => {
     type: 'html',
     contents: 'In <pre><code>./js/utilities/narrative.js</code></pre> you can see the code running this ghost writing.'
   })
-}, 7000)
+}, 9000)
 
 // rando looks like bot is about to talk, but doesnt :troll:
 setTimeout(() => {

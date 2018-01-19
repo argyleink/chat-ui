@@ -1,3 +1,4 @@
+import { $, $$ } from '../../../utilities/shorthands'
 import './styles.css'
 
 export default class ChatMessagelist extends HTMLElement {
@@ -15,7 +16,7 @@ export default class ChatMessagelist extends HTMLElement {
 
   add(payload) {
     // logic below will determine target cluster
-    let latest_cluster = this.querySelector('chat-cluster:last-of-type')
+    let latest_cluster = $('chat-cluster:last-of-type', this)
       , target_cluster
 
     // determine proper cluster for incoming message based on messagelist state
@@ -26,7 +27,7 @@ export default class ChatMessagelist extends HTMLElement {
       // add to my current cluster and not a new one if they're only typing
       else if (latest_cluster.hasAttribute('indeterminate')) {
         // double check edge case (friend is writing, also latest cluster)
-        var doublecheck = this.querySelectorAll('chat-cluster:not([indeterminate])')
+        var doublecheck = $$('chat-cluster:not([indeterminate])', this)
         // is the 2nd from end of the list mine or not?
         if (!doublecheck[doublecheck.length - 1].hasAttribute('mine')) {
           target_cluster = this.newCluster(payload)
@@ -34,7 +35,7 @@ export default class ChatMessagelist extends HTMLElement {
         }
         else {
           // passed double check, target cluster is my most recent cluster
-          let mines       = this.querySelectorAll('chat-cluster[mine]')
+          let mines       = $$('chat-cluster[mine]', this)
           target_cluster  = mines[mines.length - 1]
         }
       }
@@ -51,7 +52,7 @@ export default class ChatMessagelist extends HTMLElement {
       // add to their indeterminate cluster, remove indeterminate state
       else if (latest_cluster.hasAttribute('indeterminate')) {
         // double check that the cluster above the indeterminate cluster is not mine
-        var doublecheck = this.querySelectorAll('chat-cluster:not([indeterminate])')
+        var doublecheck = $$('chat-cluster:not([indeterminate])', this)
         if (!doublecheck[doublecheck.length - 1].hasAttribute('mine')) {
           target_cluster = doublecheck[doublecheck.length - 1]
           // we're not indeterminate anymore
@@ -60,7 +61,7 @@ export default class ChatMessagelist extends HTMLElement {
         else {
           // replace the message since it's already in a new cluster
           target_cluster = latest_cluster
-          latest_cluster.querySelector('chat-message').remove()
+          $('chat-message', latest_cluster).remove()
           latest_cluster.removeAttribute('indeterminate')
         }
       }

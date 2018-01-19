@@ -12,9 +12,9 @@ chat-authoring {
 
   border-radius: 1rem 1rem 2px;
   box-shadow: 0.25rem 0.5rem 1rem hsla(0,0%,0%,20%);
-  
+
   background: white;
-  caret-color: var(--theme-compliment, blue);
+  caret-color: var(--theme-bg, blue);
 
   font-size: 0.9rem;
   font-weight: lighter;

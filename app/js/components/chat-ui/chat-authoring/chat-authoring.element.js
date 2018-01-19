@@ -1,3 +1,4 @@
+import { $ } from '../../../utilities/shorthands'
 import './styles.css'
 
 export default class ChatAuthoring extends HTMLElement {
@@ -6,12 +7,11 @@ export default class ChatAuthoring extends HTMLElement {
   }
 
   createdCallback() {
-    this.ChatUI = document.querySelector('chat-ui')
+    this.ChatUI       = $('chat-ui')
+    this.Scrollview   = $('chat-scrollview')
 
-    this.addEventListener('focus', e => {
-      // dont use query selector, crawl parents?
-      document.querySelector('chat-scrollview').scrollToLatest()
-    })
+    this.addEventListener('focus', e => 
+      this.Scrollview.scrollToLatest())
 
     this.addEventListener('keydown', e => {
       let key = e.which || e.keyCode

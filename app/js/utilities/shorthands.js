@@ -1,2 +1,2 @@
-export const $    = query => document.querySelector(query)
-export const $$   = query => document.querySelectorAll(query)
+export const $ = (query, context = document) => context.querySelector(query)
+export const $$ = (query, context = document) => context.querySelectorAll(query)
