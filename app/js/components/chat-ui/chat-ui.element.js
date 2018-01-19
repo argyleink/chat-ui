@@ -11,7 +11,6 @@ import { $ } from '../../utilities/shorthands'
 import 'ragrid'
 import './styles.css'
 
-
 export default class ChatUI extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')
@@ -26,6 +25,8 @@ export default class ChatUI extends HTMLElement {
 
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
+
+  init() {}
 
   newMessage(payload) {
     this.Messages.add(payload)

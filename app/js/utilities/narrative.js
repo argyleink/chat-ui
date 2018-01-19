@@ -1,17 +1,20 @@
+import { $ } from './shorthands'
+
+let ChatUI
+
 setTimeout(() => {
-  document
-    .querySelector('chat-ui')
-    .addEventListener('outbound-message', payload =>
-      console.log('payload:', payload))
+  ChatUI = $('chat-ui') // dumb stashing it like this, need to tie into lifecycle hook
+  ChatUI.addEventListener('outbound-message', payload =>
+    console.log('payload:', payload))
 }, 500)
 
 // intro
 setTimeout(() => {
-  document.querySelector('chat-ui').writing()
+  ChatUI.writing()
 }, 3000)
 
 setTimeout(() => {
-  document.querySelector('chat-ui').newMessage({
+  ChatUI.newMessage({
     mine: false, 
     type: 'html',
     contents: '<b>Hello</b>!<br>Look HTML works 👍'
@@ -19,11 +22,11 @@ setTimeout(() => {
 }, 4000)
 
 setTimeout(() => {
-  document.querySelector('chat-ui').writing()
+  ChatUI.writing()
 }, 6000)
 
 setTimeout(() => {
-  document.querySelector('chat-ui').newMessage({
+  ChatUI.newMessage({
     mine: false, 
     type: 'html',
     contents: 'In <pre><code>./js/utilities/narrative.js</code></pre> you can see the code running this ghost writing.'
@@ -32,8 +35,8 @@ setTimeout(() => {
 
 // rando looks like bot is about to talk, but doesnt :troll:
 setTimeout(() => {
-  document.querySelector('chat-ui').writing()
+  ChatUI.writing()
 }, 25000)
 setTimeout(() => {
-  document.querySelector('chat-ui').writing(false)
+  ChatUI.writing(false)
 }, 28000)
