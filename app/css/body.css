@@ -3,6 +3,6 @@
 body, html {
   font-family: system-ui;
   margin: 0;
-  background: linear-gradient(to top, white 0%, hsl(0,0%,90%) 100%);
+  background: linear-gradient(to top, hsl(0,0%,90%) 0%, hsl(0,0%,100%) 100%);
   min-height: 100vh;
 }
