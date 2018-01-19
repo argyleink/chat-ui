@@ -30,7 +30,8 @@ export default class ChatScrollview extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   scrollToLatest() {
-    this.scrollTop = this.scrollHeight
+    $('chat-cluster:last-child', this)
+      .scrollIntoView()
   }
 }
 
