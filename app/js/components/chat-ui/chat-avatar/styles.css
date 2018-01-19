@@ -5,6 +5,7 @@ chat-avatar {
   margin: 0;
   overflow: hidden;
   background: hsl(0,0%,100%);
+  display: inline-block;
 
   & > img {
     width: 100%;
