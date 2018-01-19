@@ -1,8 +1,10 @@
+import * as Renderers from './renderers/'
 import './styles.css'
 
 // TODO:
 // sending state
 // sent state
+// remove loading state
 
 export default class ChatMessage extends HTMLElement {
   createdCallback() {
@@ -16,16 +18,8 @@ export default class ChatMessage extends HTMLElement {
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
-  set message(payload) {
-    // TODO: teach this message renderer more tricks (cards, buttons, etc)
-    switch (payload.type) {
-      case 'text':
-        this.textContent = payload.contents
-        break
-      case 'html':
-        this.innerHTML = payload.contents
-        break
-    }
+  set message({ type, contents }) {
+    this.innerHTML = Renderers[type](contents)
   }
 }
 

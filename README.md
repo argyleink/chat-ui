@@ -36,7 +36,7 @@ This is the primary component that you should be dealing with. It has the easy A
 document.querySelector('chat-ui')
   .newMessage({
     mine:      false, // is this new message the user or user's friend
-    type:     'html', // currently supports ['html', 'text'], later ['card', 'list']
+    type:     'HTML', // currently supports ['HTML', 'Text'], later ['Card', 'list']
     contents: 'Cool', // contents of message payload, may be of different types
     author: { 
       name:   'Turbo', 

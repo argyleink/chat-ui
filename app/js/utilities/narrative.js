@@ -16,7 +16,7 @@ setTimeout(() => {
 setTimeout(() => {
   ChatUI.newMessage({
     mine: false, 
-    type: 'html',
+    type: 'HTML',
     contents: '<b>Hello</b>!<br>Look HTML works 👍'
   })
 }, 4000)
@@ -28,7 +28,7 @@ setTimeout(() => {
 setTimeout(() => {
   ChatUI.newMessage({
     mine: false, 
-    type: 'html',
+    type: 'HTML',
     contents: 'In <pre><code>./js/utilities/narrative.js</code></pre> you can see the code running this ghost writing.'
   })
 }, 9000)
