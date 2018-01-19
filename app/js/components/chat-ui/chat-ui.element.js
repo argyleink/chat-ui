@@ -42,6 +42,7 @@ export default class ChatUI extends HTMLElement {
         new CustomEvent('outbound-message', { detail: payload }))
   }
 
+  // TODO: move this logic to the cluster class
   writing(isWriting = true) {
     if (isWriting) {
       let indeterminateFeedback = this.Messages.newCluster({

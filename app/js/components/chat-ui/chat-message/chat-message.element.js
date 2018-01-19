@@ -1,4 +1,4 @@
-import * as Renderers from './renderers/'
+import * as Renderers from '../renderers/'
 import './styles.css'
 
 // TODO:

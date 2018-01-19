@@ -1,4 +1,5 @@
 import { $, $$ } from 'utilities/shorthands'
+import * as Renderers from '../renderers/'
 import './styles.css'
 
 export default class ChatMessagelist extends HTMLElement {
