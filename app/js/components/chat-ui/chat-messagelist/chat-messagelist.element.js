@@ -20,6 +20,19 @@ export default class ChatMessagelist extends HTMLElement {
     let latest_cluster = $('chat-cluster:last-of-type', this)
       , target_cluster
 
+    // HMmmmmm.. render logic needs to go here for:
+    // cards, images, and pretty much anything rich
+    if (payload.type === 'Image') {
+      let image_cluster       = document.createElement('div')
+      image_cluster.innerHTML = Renderers[payload.type](payload)
+      
+      return this.appendChild(image_cluster.children[0])
+    }
+
+    // TODO: extract below logic flow to a testable function
+    // and unit test it
+    // also, there's a missing covered case (their message, mine is most recent cluster, their cluster had indeterminate writing happening)
+
     // determine proper cluster for incoming message based on messagelist state
     if (payload.mine) {
       // add to my current cluster (latest cluster is mine, message is mine)
@@ -77,6 +90,7 @@ export default class ChatMessagelist extends HTMLElement {
     target_cluster.add(payload)
   }
 
+  // TODO: move this logic to the ChatCluster class
   newCluster({mine = false, author = ''}) {
     let cluster = document.createElement('chat-cluster')
 
