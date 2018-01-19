@@ -1,12 +1,33 @@
+@import '../../../../css/vars.css';
+
 chat-messagelist {
   padding-bottom: 4rem;
   padding-top: 1rem;
+
+  & > chat-cluster:nth-last-child(1) { 
+    transition: transform 0.25s var(--easing-quick) 0.0s,
+                opacity 0.25s ease-in 0.0s; 
+  }
+  & > chat-cluster:nth-last-child(2) { 
+    transition: transform 0.25s var(--easing-quick) 0.05s,
+                opacity 0.25s ease-in 0.05s; 
+  }
+  & > chat-cluster:nth-last-child(3) { 
+    transition: transform 0.25s var(--easing-quick) 0.1s,
+                opacity 0.25s ease-in 0.1s; 
+  }
+  & > chat-cluster:nth-last-child(4) { 
+    transition: transform 0.25s var(--easing-quick) 0.15s,
+                opacity 0.25s ease-in 0.15s; 
+  }
 }
 
 /* parent (scrollview) is setting loading state we want to observe */
 .loading chat-messagelist {
   & > chat-cluster {
     visibility: hidden;
+    opacity: 0;
+    transform: translateY(3rem);
   }
 
   &:before {
