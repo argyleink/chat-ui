@@ -13,7 +13,7 @@ chat-ui
   chat-titlebar(title='Chat UI' avatar='https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg')
 
   chat-scrollview: chat-messagelist
-    //- chat-cluster(mine avatar='..' username='${bot_name}' message='foo')
+    //- chat-cluster(mine avatar='..' username='${bot_name}' messages='[foo,bar]')
     chat-cluster
       chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
       section
@@ -21,9 +21,10 @@ chat-ui
         chat-message Hi!
         chat-message I'm a bot 😉
         //- chat-message: img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
-    figure.chat-image
-      img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
-      figcaption: chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
+    chat-media
+      figure
+        img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
+        figcaption: chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
     chat-cluster(mine)
       chat-avatar(src='')
       section
