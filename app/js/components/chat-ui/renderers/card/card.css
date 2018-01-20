@@ -1,3 +1,5 @@
+@import '../../../../../css/vars.css';
+
 .chat-card {
   background: white;
   box-shadow: 0 0.2em 0.3em hsl(0,0%,80%);
@@ -17,6 +19,7 @@
     & > p {
       margin: 0.5rem;
       color: hsl(0, 0%, 10%);
+      font-size: var(--chat-message_font-size);
     }
   }
 
@@ -25,6 +28,7 @@
     border-top: 1px solid hsl(0,0%,90%);
     
     & > a {
+      font-size: var(--chat-message_font-size);
       color: hsl(0, 0%, 40%);
       text-decoration: none;
       padding: 0.5rem 1rem;

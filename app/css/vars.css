@@ -2,8 +2,9 @@
 :root {
   --theme-bg: hsl(200, 100%, 50%);
   --theme-compliment: color(var(--theme-bg) hue(+200));
-
   --theme-text_color: white;
+
+  --chat-message_font-size: 0.8rem;
 
   --easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }

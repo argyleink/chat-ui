@@ -4,7 +4,7 @@ chat-message {
   /* background-color: var(--theme-bg, blue); */
   /* color: var(--theme-text_color, white); */
   background-color: white;
-  font-size: 0.8rem;
+  font-size: var(--chat-message_font-size);
   line-height: 1.4;
 
   padding: 0.5rem 0.75rem;
@@ -78,6 +78,10 @@ chat-message {
 }
 
 @media screen and (max-width:480px) {
+  :root {
+    --chat-message_font-size: 1rem;
+  }
+
   chat-message {
     font-size: 1rem;
   }
