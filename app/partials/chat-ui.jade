@@ -20,7 +20,10 @@ chat-ui
         h3 ${bot_name}
         chat-message Hi!
         chat-message I'm a bot 😉
-        chat-message: img(src="https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif")
+        //- chat-message: img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
+    figure.chat-image
+      img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
+      figcaption: chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
     chat-cluster(mine)
       chat-avatar(src='')
       section
