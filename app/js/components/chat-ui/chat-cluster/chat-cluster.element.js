@@ -1,3 +1,4 @@
+import { $ } from 'utilities/shorthands'
 import './styles.css'
 
 export default class ChatCluster extends HTMLElement {
@@ -9,7 +10,7 @@ export default class ChatCluster extends HTMLElement {
   }
 
   attachedCallback() {
-    this.Messages = this.querySelector('section')
+    this.Messages = $('section', this)
     this.Messages.setAttribute('grid', 'rows')
 
     this.classList.remove('loading')

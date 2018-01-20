@@ -7,8 +7,8 @@ export default class ChatAuthoring extends HTMLElement {
   }
 
   createdCallback() {
-    this.ChatUI       = $('chat-ui')
-    this.Scrollview   = $('chat-scrollview')
+    this.ChatUI       = this.parentNode
+    this.Scrollview   = $('chat-scrollview', this.parentNode)
 
     this.addEventListener('focus', e => 
       this.Scrollview.scrollToLatest())
