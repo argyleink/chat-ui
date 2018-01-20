@@ -1,6 +1,9 @@
 import { $ } from 'utilities/shorthands'
 import './styles.css'
 
+// TODO: build own DOM
+// should allow api like this
+// chat-cluster(mine avatar='..' username='${bot_name}' messages='[foo,bar]')
 export default class ChatCluster extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')
@@ -8,7 +11,10 @@ export default class ChatCluster extends HTMLElement {
     this.setAttribute('grid', '')
     this.setAttribute('vertically-aligned', 'bottom')
 
-    // this.innerHTML = render()
+    if (this.hasAttribute('messages')) {
+      this.seed_data = JSON.parse(this.getAttribute('messages'))
+      this.innerHTML = this.render()
+    }
   }
 
   attachedCallback() {
@@ -21,15 +27,18 @@ export default class ChatCluster extends HTMLElement {
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
-  // render() {
-  //   return `
-  //     <chat-avatar src='${this.getAttribute('avatar')}'></chat-avatar>
-  //     <section grid='rows'>
-  //       <h3>${this.getAttribute('username')}</h3>
-  //       <chat-message>${this.getAttribute('message')}</chat-message>
-  //     </section>
-  //   `
-  // }
+  render() {
+    return `
+      <chat-avatar src='${this.getAttribute('avatar')}'></chat-avatar>
+      <section grid='rows'>
+        <h3>${this.getAttribute('username')}</h3>
+        ${this.seed_data.reduce((messages, message) =>
+          `${messages}
+          <chat-message>${message}</chat-message>
+        `, '')}
+      </section>
+    `
+  }
 
   add(message) {
     this.Messages.appendChild(

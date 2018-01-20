@@ -13,36 +13,31 @@ chat-ui
   chat-titlebar(title='Chat UI' avatar='https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg')
 
   chat-scrollview: chat-messagelist
-    //- chat-cluster(mine avatar='..' username='${bot_name}' messages='[foo,bar]')
-    chat-cluster
-      chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
-      section
-        h3 ${bot_name}
-        chat-message Hi!
-        chat-message I'm a bot 😉
-        //- chat-message: img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
+    chat-cluster(
+      avatar='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif' 
+      username='${bot_name}' 
+      messages='["Hi!", "I\'m a bot 😉"]'
+    )
     chat-media
       figure
         img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
         figcaption: chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
-    chat-cluster(mine)
-      chat-avatar(src='')
-      section
-        h3 Not Bot 
-        chat-message I'm <i>NOT</i> a bot
-        chat-message 😜
-        chat-message what kind of things can you do?
-        chat-message can you generate ipsum so i can test really long messages in the thread?
-    chat-cluster
-      chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
-      section
-        h3 ${bot_name}
-        chat-message Yep! Here's some cupcake ipsum
-        chat-message Cake brownie chocolate jujubes liquorice lollipop jelly biscuit. Liquorice carrot cake jelly beans tootsie roll. 
-    chat-cluster(mine)
-      chat-avatar(src='')
-      section
-        h3 Not Bot 
-        chat-message Well played
+    chat-cluster(
+      mine 
+      avatar='' 
+      username='Not Bot' 
+      messages='["I\'m <i>NOT</i> a bot", "😜", "what kind of things can you do?", "can you generate ipsum so i can test really long messages in the thread?"]'
+    )
+    chat-cluster(
+      avatar='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif' 
+      username='${bot_name}' 
+      messages='["Yep! Here\'s some cupcake ipsum", "Cake brownie chocolate jujubes liquorice lollipop jelly biscuit. Liquorice carrot cake jelly beans tootsie roll. "]'
+    ) 
+    chat-cluster(
+      mine 
+      avatar='' 
+      username='Not Bot' 
+      messages='["Well played"]'
+    )
 
   chat-authoring
