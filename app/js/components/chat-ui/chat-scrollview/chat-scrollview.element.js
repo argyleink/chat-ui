@@ -5,9 +5,10 @@ export default class ChatScrollview extends HTMLElement {
   attachedCallback() {}
 
   createdCallback() {
-    this.Titlebar = $('chat-titlebar')
+    this.Titlebar = $('chat-titlebar', this.parentNode)
 
     // show/hide based on scroll direction
+    // todo: debounce
     this.onscroll = e => {
       if (this.oldScroll > e.currentTarget.scrollTop && this.clientHeight + this.scrollTop != this.scrollHeight)
         this.Titlebar.hide()
@@ -21,7 +22,7 @@ export default class ChatScrollview extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   scrollToLatest() {
-    $('chat-cluster:last-child', this)
+    $('chat-messagelist > *:last-child', this)
       .scrollIntoView()
   }
 }

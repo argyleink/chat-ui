@@ -22,7 +22,7 @@ export default class ChatMessagelist extends HTMLElement {
 
     // HMmmmmm.. render logic needs to go here for:
     // cards, images, and pretty much anything rich
-    if (payload.type === 'Image') {
+    if (payload.type === 'Image' || payload.type === 'Card') {
       let image_cluster       = document.createElement('div')
       image_cluster.innerHTML = Renderers[payload.type](payload)
       

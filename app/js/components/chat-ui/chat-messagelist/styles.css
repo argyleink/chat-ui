@@ -4,24 +4,6 @@ chat-messagelist {
   padding-bottom: 4rem;
   padding-top: 1rem;
 
-  & > figure {
-    margin: 1rem 0;
-    max-width: 100%;
-    max-height: 60vh;
-    position: relative;
-
-    & > img {
-      width: 100%;
-      object-fit: cover;
-    }
-
-    & > figcaption {
-      position: absolute;
-      top: -1rem;
-      left: 2rem;
-    }
-  }
-
   /* animate in */
   & > chat-cluster:nth-last-child(1) { 
     transition: transform 0.25s var(--easing-quick) 0.0s,
@@ -41,9 +23,8 @@ chat-messagelist {
   }
 }
 
-/* parent (scrollview) is setting loading state we want to observe */
 .loading chat-messagelist {
-  & > chat-cluster {
+  & > * {
     visibility: hidden;
     opacity: 0;
     transform: translateY(3rem);
