@@ -24,6 +24,7 @@ export default class ChatUI extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   init(messages) {
+    // TODO:
     // create vnode holder for loop result
     // iterate over messages
     // create clusters for sequental alternating messages
@@ -61,7 +62,6 @@ export default class ChatUI extends HTMLElement {
           }))
 
       this.Messages.appendChild(indeterminateFeedback)
-      this.Scrollview.scrollToLatest()
     }
     else {
       let indeterminateFeedback = $('chat-cluster[indeterminate]', this)
