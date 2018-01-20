@@ -7,6 +7,8 @@ export default class ChatCluster extends HTMLElement {
 
     this.setAttribute('grid', '')
     this.setAttribute('vertically-aligned', 'bottom')
+
+    // this.innerHTML = render()
   }
 
   attachedCallback() {
@@ -18,6 +20,16 @@ export default class ChatCluster extends HTMLElement {
 
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
+
+  // render() {
+  //   return `
+  //     <chat-avatar src='${this.getAttribute('avatar')}'></chat-avatar>
+  //     <section grid='rows'>
+  //       <h3>${this.getAttribute('username')}</h3>
+  //       <chat-message>${this.getAttribute('message')}</chat-message>
+  //     </section>
+  //   `
+  // }
 
   add(message) {
     this.Messages.appendChild(
