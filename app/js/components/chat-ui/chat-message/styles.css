@@ -77,7 +77,7 @@ chat-message {
   }
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:350px) {
   :root {
     --chat-message_font-size: 1rem;
   }

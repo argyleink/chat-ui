@@ -6,7 +6,7 @@ chat-ui {
   box-shadow: 0 3rem 10rem hsl(0,0%,60%);
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:350px) {
   body {
     overflow: hidden;
   }

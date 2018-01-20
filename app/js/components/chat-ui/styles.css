@@ -3,10 +3,10 @@
 /* TODO: Theming with var() */
 
 chat-ui {
-  width: 320px;
-  height: 480px;
+  width: var(--chat-ui_width);
+  height: var(--chat-ui_height);
 
-  background: hsl(0,0%,90%);
+  background: var(--chat-ui_bg);
   /*border-bottom: 2px solid var(--theme-bg);*/
 
   overflow: hidden;
