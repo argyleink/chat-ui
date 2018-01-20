@@ -1,42 +1,56 @@
 @import '../../../../../css/vars.css';
 
-.chat-card {
-  background: white;
-  box-shadow: 0 0.2em 0.3em hsl(0,0%,80%);
-  border-radius: 0.2rem;
-  padding: 0.5rem;
-  margin: 1rem 0.5rem;
-  box-sizing: border-box;
+chat-cards {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-wrap: nowrap;
 
-  & > .card-content {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  /*&::-webkit-scrollbar {
+    display: none;
+  }*/
+
+  & > chat-card {
+    min-width: calc(var(--chat-ui_width) - 2rem);
+    background: white;
+    box-shadow: 0 0.2em 0.3em hsla(0,0%,0%,20%);
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    margin: 1rem 0.5rem;
+    box-sizing: border-box;
+
+    & > .card-content {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+        
+      & > img {
+        max-width: 100%;
+      }
+
+      & > p {
+        margin: 0.5rem;
+        color: hsl(0, 0%, 10%);
+        font-size: var(--chat-message_font-size);
+      }
+    }
+
+    & > .card-footer {
+      padding-top: 0.5rem;
+      border-top: 1px solid hsl(0,0%,90%);
       
-    & > img {
-      max-width: 100%;
-    }
+      & > a {
+        font-size: var(--chat-message_font-size);
+        color: hsl(0, 0%, 40%);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
 
-    & > p {
-      margin: 0.5rem;
-      color: hsl(0, 0%, 10%);
-      font-size: var(--chat-message_font-size);
-    }
-  }
-
-  & > .card-footer {
-    padding-top: 0.5rem;
-    border-top: 1px solid hsl(0,0%,90%);
-    
-    & > a {
-      font-size: var(--chat-message_font-size);
-      color: hsl(0, 0%, 40%);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-
-      &:hover {
-        background: hsl(0,0%,96%);
-        box-shadow: 0 0.1rem 0.25rem hsl(0,0%,70%);
+        &:hover {
+          background: hsl(0,0%,96%);
+          box-shadow: 0 0.1rem 0.25rem hsl(0,0%,70%);
+        }
       }
     }
   }
