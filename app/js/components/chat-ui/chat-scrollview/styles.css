@@ -1,6 +1,7 @@
 chat-scrollview {
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 
   position: absolute;
