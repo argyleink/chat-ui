@@ -11,6 +11,14 @@ chat-cards {
   /*&::-webkit-scrollbar {
     display: none;
   }*/
+  
+  & > [sticky] {
+    position: sticky;
+    top: 0;
+    left: 0.5rem;
+    width: 0;
+    z-index: 10;
+  }
 
   & > chat-card {
     min-width: calc(var(--chat-ui_width) - 2rem);

@@ -21,13 +21,13 @@ export default class ChatGallery extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   render() {
-    return this.seed_data.reduce((images, image) =>
-      `${images}
-      ${Image({
-        avatar: this.getAttribute('avatar'),
-        image: image.src
-      })}
-    `, '')
+    return `
+      <div sticky><chat-avatar src="${this.getAttribute('avatar')}"></chat-avatar></div>
+      ${this.seed_data.reduce((images, image) => `
+        ${images}
+        ${Image(image.src)}
+      `, '')}
+    `
   }
 }
 

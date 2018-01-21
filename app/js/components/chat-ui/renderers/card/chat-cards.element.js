@@ -23,14 +23,16 @@ export default class ChatCards extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   render() {
-    return this.seed_data.reduce((cards, card) =>
-      `${cards}
-      ${Card({
-        avatar: this.getAttribute('avatar'),
-        image: card.image,
-        text: card.text
-      })}
-    `, '')
+    return `
+      <div sticky><chat-avatar src="${this.getAttribute('avatar')}"></chat-avatar></div>
+      ${this.seed_data.reduce((cards, card) => `
+        ${cards}
+        ${Card({
+          image: card.image,
+          text: card.text
+        })}
+      `, '')}
+      `
   }
 }
 

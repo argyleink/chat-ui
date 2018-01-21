@@ -12,7 +12,7 @@ chat-titlebar {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 11;
 
   will-change: transform;
   transition: transform 0.15s var(--easing-quick);

@@ -1,5 +1,29 @@
-chat-media {
+@import '../../../../../css/vars.css';
 
+chat-gallery {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-wrap: nowrap;
+
+  & chat-media > figure > img {
+    height: 200px;
+    width: calc(var(--chat-ui_width) - 2rem);
+    object-fit: cover;
+  }
+
+  & > [sticky] {
+    position: sticky;
+    top: 0;
+    left: 0.5rem;
+    width: 0;
+    z-index: 10;
+  }
+}
+
+chat-media {
   & > figure {
     margin: 1rem 0;
     max-width: 100%;
