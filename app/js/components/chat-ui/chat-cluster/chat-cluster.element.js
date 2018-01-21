@@ -1,9 +1,6 @@
 import { $ } from 'utilities/shorthands'
 import './styles.css'
 
-// TODO: build own DOM
-// should allow api like this
-// chat-cluster(mine avatar='..' username='${bot_name}' messages='[foo,bar]')
 export default class ChatCluster extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')

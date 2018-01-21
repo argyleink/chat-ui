@@ -22,7 +22,7 @@ chat-cards {
     box-sizing: border-box;
 
     & > .card-content {
-      margin-top: 0.5rem;
+      flex: 2;
       margin-bottom: 0.5rem;
         
       & > img {

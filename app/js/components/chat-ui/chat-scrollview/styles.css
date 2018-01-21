@@ -4,7 +4,9 @@ chat-scrollview {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 
+  /* todo: fix list not at bottom when list is short; */
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
