@@ -8,18 +8,26 @@ chat-gallery {
   display: flex;
   flex-wrap: nowrap;
 
-  & chat-media > figure > img {
-    height: 200px;
-    width: calc(var(--chat-ui_width) - 2rem);
-    object-fit: cover;
+  & chat-media > figure {
+    margin-right: 0.5rem;
+
+    & > img {
+      height: 200px;
+      width: calc(var(--chat-ui_width) - 3rem);
+      object-fit: cover;
+    }
   }
 
   & > [sticky] {
     position: sticky;
     top: 0;
-    left: 0.5rem;
+    left: 2rem;
     width: 0;
     z-index: 10;
+  }
+
+  &[mine] > [sticky] {
+    left: calc(100% - 4rem);
   }
 }
 
