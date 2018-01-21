@@ -1,7 +1,7 @@
 //- single element api i think sounds nice
 //- chat-ui(
 //-   title='Chat UI'
-//-   title-image='https://cdn.something.jpg'
+//-   user-avatar='https://cdn.something.jpg'
 //-   bot-name='Bot'
 //-   bot-avatar='https://cdn.something.jpg'
 //- )
@@ -22,10 +22,10 @@ chat-ui
       avatar='https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg'
       images='[{"src":"http://hello.eboy.com/eboy/wp-content/uploads/2015/09/SFCUTCOVER-01t-2x.png"}, {"src":"http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png"}]'
     )
-    //- chat-media
-    //-   figure
-    //-     img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
-    //-     figcaption: chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
+    chat-media
+      figure
+        img(src='https://78.media.tumblr.com/f7a12ce0c97296d7b2a7beb7428a826b/tumblr_milh3ahrmF1qgjeodo1_540.gif')
+        figcaption: chat-avatar(src='https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif')
     chat-cards(
       avatar='https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg'
       username='${bot_name}'

@@ -18,6 +18,7 @@
 - Themeability (coming soon)
 - Ready to puppet
 - Minimal footprint
+- Cards, Image(s), extensibility for renderings payloads by type
 
 
 
@@ -27,6 +28,8 @@
 #### <chat-ui> 
 
 This is the primary component that you should be dealing with. It has the easy API, for quick access to the most common tasks in a chat widget. You shouldn't need the API's for the other components, but you can leverage them if you want to.
+
+WARNING: I'm moving fast and not updating these docs much..
 
 
 

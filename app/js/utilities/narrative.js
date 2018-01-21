@@ -40,29 +40,29 @@ setTimeout(() => {
 }, 1500)
 
 // intro
-// setTimeout(() => {
-//   ChatUI.writing()
-// }, 3000)
+setTimeout(() => {
+  ChatUI.writing()
+}, 3000)
 
-// setTimeout(() => {
-//   ChatUI.newMessage({
-//     mine: false, 
-//     type: 'HTML',
-//     contents: '<b>Hello</b>!<br>Look HTML works 👍'
-//   })
-// }, 4000)
+setTimeout(() => {
+  ChatUI.newMessage({
+    mine: false, 
+    type: 'HTML',
+    contents: '<b>Hello</b>!<br>Look HTML works 👍'
+  })
+}, 5000)
 
-// setTimeout(() => {
-//   ChatUI.writing()
-// }, 5000)
+setTimeout(() => {
+  ChatUI.writing()
+}, 6000)
 
-// setTimeout(() => {
-//   ChatUI.newMessage({
-//     mine: false, 
-//     type: 'HTML',
-//     contents: 'In <pre><code>./js/utilities/narrative.js</code></pre> you can see the code running this ghost writing.'
-//   })
-// }, 9000)
+setTimeout(() => {
+  ChatUI.newMessage({
+    mine: false, 
+    type: 'HTML',
+    contents: 'In <pre><code>./js/utilities/narrative.js</code></pre> you can see the code running this ghost writing.'
+  })
+}, 8000)
 
 // // rando looks like bot is about to talk, but doesnt :troll:
 // setTimeout(() => {

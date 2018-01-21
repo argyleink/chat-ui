@@ -1,8 +1,6 @@
 export {ChatCards} from './chat-cards.element'
 
-// naming is messy between singular and plurals
 // async image loading strategy
-// handle array of cards
 export const Card = ({avatar, image, text}) => `
   <chat-card grid="rows" vertically-distributed="equal">
     <div class="card-content">

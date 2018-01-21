@@ -4,19 +4,13 @@ import './styles.css'
 
 export default class ChatGallery extends HTMLElement {
   createdCallback() {
-    this.classList.add('loading')
-
     if (this.hasAttribute('images')) {
       this.seed_data = JSON.parse(this.getAttribute('images'))
       this.innerHTML = this.render()
     }
   }
 
-  attachedCallback() {
-    // removing this should wait for child images to finish loading?
-    this.classList.remove('loading')
-  }
-
+  attachedCallback() {}
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
