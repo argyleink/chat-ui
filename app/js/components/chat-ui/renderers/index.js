@@ -1,7 +1,7 @@
 import {HTML}   from './html'
 import {Text}   from './text'
-import {Image}  from './image/'
-import {Card, Element}   from './card/'
+import {Image, ChatGallery}  from './image/'
+import {Card, ChatCards}   from './card/'
 
 export { 
   HTML, 

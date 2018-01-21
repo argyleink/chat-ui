@@ -3,26 +3,30 @@ import { $ } from './shorthands'
 let ChatUI
 
 window.testCard = () => {
-  ChatUI.newMessage({
-    mine: false, 
-    type: 'Card',
-    author: {
-      avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
-    },
-    image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
-    text: 'test'
-  })
+  // !api changing
+  // ChatUI.newMessage({
+  //   mine: false, 
+  //   type: 'Card',
+  //   cards: [{
+  //     username: '${bot_name}',
+  //     avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif',
+  //     image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+  //     text: 'test'
+  //   }]
+  // })
 }
 
 window.testImage = () => {
-  ChatUI.newMessage({
-    mine: false, 
-    type: 'Image',
-    author: {
-      avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
-    },
-    image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png'
-  })
+  // !api changing
+  // ChatUI.newMessage({
+  //   mine: false, 
+  //   type: 'Image',
+  //   author: {
+  //     author: '${bot_name}',
+  //     avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
+  //   },
+  //   image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png'
+  // })
 }
 
 // simulate loading

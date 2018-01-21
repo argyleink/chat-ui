@@ -1,6 +1,4 @@
-import ChatCards from './chat-cards.element'
-
-export const Element = ChatCards
+export {ChatCards} from './chat-cards.element'
 
 // naming is messy between singular and plurals
 // async image loading strategy
