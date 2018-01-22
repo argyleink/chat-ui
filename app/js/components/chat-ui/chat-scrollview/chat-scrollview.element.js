@@ -25,6 +25,11 @@ export default class ChatScrollview extends HTMLElement {
     $('chat-messagelist > *:last-child', this)
       .scrollIntoView()
   }
+
+  atBottom() {
+    // 52 is the authoring component plus the margins around it
+    return this.clientHeight + this.scrollTop + 52 >= this.scrollHeight
+  }
 }
 
 document.registerElement('chat-scrollview', ChatScrollview)

@@ -62,6 +62,11 @@ export default class ChatUI extends HTMLElement {
           }))
 
       this.Messages.appendChild(indeterminateFeedback)
+      
+      // if at end of scroll (dont want to disrupt user during scrolling history)
+      // force scroll to show indicator
+      if (this.Scrollview.atBottom())
+        this.Scrollview.scrollToLatest()
     }
     else {
       let indeterminateFeedback = $('chat-cluster[indeterminate]', this)
