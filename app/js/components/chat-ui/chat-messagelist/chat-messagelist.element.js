@@ -18,22 +18,22 @@ export default class ChatMessagelist extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {}
 
   add(payload) {
-    // logic below will determine target cluster
-    let latest_cluster = $('chat-cluster:last-of-type', this)
-      , target_cluster
-
     // HMmmmmm.. render logic needs to go here for:
     // cards, images, and pretty much anything rich
     if (payload.type === 'Image' || payload.type === 'Card') {
       let image_cluster       = document.createElement('div')
       image_cluster.innerHTML = Renderers[payload.type](payload)
       
+      // escape looking for latest cluster, dont need it with rich render types
       return this.appendChild(image_cluster.children[0])
     }
 
+    // logic below will determine target cluster
+    let latest_cluster = $('chat-cluster:last-of-type', this)
+      , target_cluster
+
     // TODO: extract below logic flow to a testable function
     // and unit test it
-    // also, there's a missing covered case (their message, mine is most recent cluster, their cluster had indeterminate writing happening)
 
     // determine proper cluster for incoming message based on messagelist state
     if (payload.mine) {

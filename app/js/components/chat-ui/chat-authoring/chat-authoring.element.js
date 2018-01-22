@@ -1,6 +1,9 @@
 import { $ } from 'utilities/shorthands'
 import './styles.css'
 
+// TODO:
+// image upload?
+// markdown support?
 export default class ChatAuthoring extends HTMLElement {
   attachedCallback() {
     this.setAttribute('contenteditable', '')
