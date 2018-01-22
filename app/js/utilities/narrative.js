@@ -48,6 +48,7 @@ setTimeout(() => {
   ChatUI.newMessage({
     mine: false, 
     type: 'HTML',
+    author: { avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif' },
     contents: '<b>Hello</b>!<br>Look HTML works 👍'
   })
 }, 5000)
@@ -60,6 +61,7 @@ setTimeout(() => {
   ChatUI.newMessage({
     mine: false, 
     type: 'HTML',
+    author: { avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif' },
     contents: 'In <pre><code>./js/utilities/narrative.js</code></pre> you can see the code running this ghost writing.'
   })
 }, 8000)
