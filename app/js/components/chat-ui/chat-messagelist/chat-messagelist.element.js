@@ -79,6 +79,11 @@ export default class ChatMessagelist extends HTMLElement {
           latest_cluster.removeAttribute('indeterminate')
         }
       }
+      else if ($('chat-cluster[indeterminate]:not([mine])', this)) {
+        $('chat-cluster[indeterminate]:not([mine])', this).remove()
+        target_cluster = this.newCluster(payload)
+        this.appendChild(target_cluster)
+      }
       // start new cluster for them (mine is latest, newest message is theirs)
       else {
         target_cluster = this.newCluster(payload)
