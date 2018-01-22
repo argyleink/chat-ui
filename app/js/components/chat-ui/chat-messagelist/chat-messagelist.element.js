@@ -1,4 +1,4 @@
-import { $, $$ } from 'utilities/shorthands'
+import { $, $$, setAttributes } from 'utilities/shorthands'
 import * as Renderers from '../renderers/'
 import './styles.css'
 
@@ -6,8 +6,10 @@ export default class ChatMessagelist extends HTMLElement {
   attachedCallback() {}
 
   createdCallback() {
-    this.setAttribute('grid', 'rows')
-    this.setAttribute('horizontally-aligned', 'right')
+    setAttributes(this, {
+      'grid': 'rows',
+      'horizontally-aligned': 'right',
+    })
 
     // loading strategy for when initialized but empty
   }

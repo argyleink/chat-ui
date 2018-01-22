@@ -1,12 +1,14 @@
-import { $ } from 'utilities/shorthands'
+import { $, setAttributes } from 'utilities/shorthands'
 import './styles.css'
 
 export default class ChatCluster extends HTMLElement {
   createdCallback() {
     this.classList.add('loading')
-
-    this.setAttribute('grid', '')
-    this.setAttribute('vertically-aligned', 'bottom')
+    
+    setAttributes(this, {
+      'grid': '',
+      'vertically-aligned': 'bottom',
+    })
 
     if (this.hasAttribute('messages')) {
       this.seed_data = JSON.parse(this.getAttribute('messages'))
