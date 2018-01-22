@@ -14,15 +14,11 @@ export const Card = ({avatar, image, text}) => `
   </chat-card>
 `
 
-// export const Cards = (author, card_data) => `
-//   <chat-cards>
-//     ${card_data.reduce((cards, card) =>
-//       `${cards}
-//       ${Card({
-//         avatar: author,
-//         image: card.image,
-//         text: card.text
-//       })}
-//     `, '')}
-//   </chat-cards>
-// `
+export const CardsTemplate = ({mine = false, author, username, cards}) => `
+  <chat-cards
+    ${mine ? 'mine' : ''}
+    avatar='${author.avatar}'
+    username='${username}'
+    cards='${JSON.stringify(cards)}'
+  ></chat-cards>
+`

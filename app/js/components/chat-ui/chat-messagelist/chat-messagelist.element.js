@@ -20,7 +20,7 @@ export default class ChatMessagelist extends HTMLElement {
   add(payload) {
     // HMmmmmm.. render logic needs to go here for:
     // cards, images, and pretty much anything rich
-    if (payload.type === 'Image' || payload.type === 'Card') {
+    if (payload.type !== 'Text' && payload.type !== 'HTML') {
       let image_cluster       = document.createElement('div')
       image_cluster.innerHTML = Renderers[payload.type](payload)
       
@@ -101,6 +101,8 @@ export default class ChatMessagelist extends HTMLElement {
   newCluster({mine = false, author = ''}) {
     let cluster = document.createElement('chat-cluster')
 
+    // TODO: cross check author name instead of mine flag
+    // maybe even have done that check before calling this function
     if (mine) cluster.setAttribute('mine', '')
 
     cluster.innerHTML = `

@@ -4,29 +4,57 @@ let ChatUI
 
 window.testCard = () => {
   // !api changing
-  // ChatUI.newMessage({
-  //   mine: false, 
-  //   type: 'Card',
-  //   cards: [{
-  //     username: '${bot_name}',
-  //     avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif',
-  //     image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
-  //     text: 'test'
-  //   }]
-  // })
+  ChatUI.newMessage({
+    mine: false, 
+    type: 'Card',
+    author: {
+      name: '${bot_name}',
+      avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
+    },
+    cards: [{
+      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      text: 'test'
+    }]
+  })
 }
 
-window.testImage = () => {
+window.testCards = () => {
+  ChatUI.newMessage({
+    mine: false, 
+    type: 'Card',
+    author: {
+      name: '${bot_name}',
+      avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
+    },
+    cards: [{
+      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      text: 'test'
+    },
+    {
+      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      text: 'test'
+    },
+    {
+      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      text: 'test'
+    }]
+  })
+}
+
+window.testGallery = () => {
   // !api changing
-  // ChatUI.newMessage({
-  //   mine: false, 
-  //   type: 'Image',
-  //   author: {
-  //     author: '${bot_name}',
-  //     avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
-  //   },
-  //   image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png'
-  // })
+  ChatUI.newMessage({
+    mine: false, 
+    type: 'Gallery',
+    author: {
+      name: '${bot_name}',
+      avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
+    },
+    images: [
+      {src:"http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png"},
+      {src:"http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png"}
+    ]
+  })
 }
 
 // simulate loading

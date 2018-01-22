@@ -1,13 +1,16 @@
 import {HTML} from './html'
 import {Text} from './text'
-import {Image, ChatGallery} from './image/'
-import {Card, ChatCards} from './card/'
+import {ChatGallery, GalleryTemplate} from './image/'
+import {ChatCards, CardsTemplate} from './card/'
+
+const Card = CardsTemplate
+const Gallery = GalleryTemplate
 
 export { 
   HTML, 
   Text, 
   Image,
-  // image gallery
+  Gallery,
   Card,
   // links
 }

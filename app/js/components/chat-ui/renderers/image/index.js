@@ -10,3 +10,11 @@ export const Image = image => `
     </figure>
   </chat-media>
 `
+
+export const GalleryTemplate = ({mine = false, author, images}) => `
+  <chat-gallery
+    ${mine ? 'mine' : ''}
+    avatar='${author.avatar}'
+    images='${JSON.stringify(images)}'
+  ></chat-gallery>
+`
