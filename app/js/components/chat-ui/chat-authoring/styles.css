@@ -2,7 +2,7 @@
 
 chat-authoring {
   position: absolute;
-  z-index: 3;
+  z-index: 12;
   bottom: 0.5rem;
   right: 0;
   box-sizing: border-box;
