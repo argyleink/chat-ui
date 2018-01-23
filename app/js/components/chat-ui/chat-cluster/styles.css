@@ -23,6 +23,8 @@ chat-cluster {
 
   & > chat-avatar {
     margin-right: 0.5rem;
+    bottom: 1rem;
+    position: sticky;
   }
 
   & > section {
