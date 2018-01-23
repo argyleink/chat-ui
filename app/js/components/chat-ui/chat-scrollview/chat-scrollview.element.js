@@ -23,7 +23,7 @@ export default class ChatScrollview extends HTMLElement {
 
   scrollToLatest() {
     $('chat-messagelist > *:last-child', this)
-      .scrollIntoView()
+      .scrollIntoView() // {behavior:'smooth'}
   }
 
   atBottom() {
