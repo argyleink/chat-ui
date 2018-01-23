@@ -26,7 +26,7 @@ chat-message {
   &[new] {
     opacity: 0;
     transform: translateX(-1rem);
-    animation: slide_in 0.5s var(--easing-quick) forwards;
+    animation: slide_in 0.5s var(--easing-quick) forwards 0.15s;
   }
 
   & img {
