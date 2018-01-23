@@ -3,6 +3,7 @@
 chat-messagelist {
   padding-bottom: 4rem;
   padding-top: 1rem;
+  min-height: calc(100% - 5rem);
 
   /* animate in */
   & > chat-cluster:nth-last-child(1) { 
