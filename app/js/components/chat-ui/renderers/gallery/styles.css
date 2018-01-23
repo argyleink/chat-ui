@@ -8,7 +8,7 @@ chat-gallery {
   display: flex;
   flex-wrap: nowrap;
 
-  & chat-media > figure {
+  & chat-gallery-image > figure {
     margin-right: 0.5rem;
 
     & > img {
@@ -31,7 +31,7 @@ chat-gallery {
   }
 }
 
-chat-media {
+chat-gallery-image {
   & > figure {
     margin: 1rem 0;
     max-width: 100%;
