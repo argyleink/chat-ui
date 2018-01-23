@@ -11,6 +11,5 @@ export {
   Text, 
   Image,
   Gallery,
-  Card,
-  // links
+  Card
 }
