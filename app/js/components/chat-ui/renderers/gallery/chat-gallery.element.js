@@ -3,6 +3,7 @@ import { Image } from './index' // #ugly #todo
 import './styles.css'
 
 // todo:
+// async image loading strategy
 // intersection observer for loading and display toggling
 // help scrolling by showing media conditionally
 export default class ChatGallery extends HTMLElement {
