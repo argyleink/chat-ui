@@ -4,6 +4,7 @@ import './styles.css'
 // TODO:
 // sending state
 // sent state
+// read state
 // remove loading state
 
 export default class ChatMessage extends HTMLElement {
