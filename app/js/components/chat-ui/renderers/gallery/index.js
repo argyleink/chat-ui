@@ -1,14 +1,11 @@
 export {ChatGallery} from './chat-gallery.element'
 
-// TODO: custom element
-// async image loading strategy
-// handle array of images
 export const Image = image => `
-  <chat-media>
+  <chat-gallery-image>
     <figure>
       <img src="${image}">
     </figure>
-  </chat-media>
+  </chat-gallery-image>
 `
 
 export const GalleryTemplate = ({mine = false, author, images}) => `
