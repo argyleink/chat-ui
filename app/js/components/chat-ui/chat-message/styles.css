@@ -44,7 +44,6 @@ chat-message {
   /* background: var(--theme-compliment); */
   background: hsl(0,0%,85%);
   border-radius: 1rem 0.25rem 0.25rem 1rem;
-  box-shadow: inset 0 -0.1rem 1rem hsl(0,0%,80%);
 
   &[new] {
     transform: translateX(1rem);
