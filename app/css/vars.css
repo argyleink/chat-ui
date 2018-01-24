@@ -15,6 +15,13 @@
   --chat-ui_message_text-color: hsl(0,0%,10%);
   --chat-ui_message_font-size: 0.8rem;
 
+  /* dark mode */
+  /* --chat-ui_theme: hsl(0,0%,15%);
+  --chat-ui_bg: hsl(0,0%,10%);
+  --chat-ui_message_bg: hsl(0,0%,20%);
+  --chat-ui_message_text-color: hsl(0,0%,60%);
+  --chat-ui_message_bg2: hsl(0,0%,13%); */
+
   /* animations */
   --chat-ui_easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
