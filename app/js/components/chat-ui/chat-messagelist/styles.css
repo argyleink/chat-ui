@@ -7,19 +7,19 @@ chat-messagelist {
 
   /* animate in */
   & > chat-cluster:nth-last-child(1) { 
-    transition: transform 0.25s var(--easing-quick) 0.0s,
+    transition: transform 0.25s var(--chat-ui_easing-quick) 0.0s,
                 opacity 0.25s ease-in 0.0s; 
   }
   & > chat-cluster:nth-last-child(2) { 
-    transition: transform 0.25s var(--easing-quick) 0.05s,
+    transition: transform 0.25s var(--chat-ui_easing-quick) 0.05s,
                 opacity 0.25s ease-in 0.05s; 
   }
   & > chat-cluster:nth-last-child(3) { 
-    transition: transform 0.25s var(--easing-quick) 0.1s,
+    transition: transform 0.25s var(--chat-ui_easing-quick) 0.1s,
                 opacity 0.25s ease-in 0.1s; 
   }
   & > chat-cluster:nth-last-child(4) { 
-    transition: transform 0.25s var(--easing-quick) 0.15s,
+    transition: transform 0.25s var(--chat-ui_easing-quick) 0.15s,
                 opacity 0.25s ease-in 0.15s; 
   }
 }

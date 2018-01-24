@@ -1,15 +1,20 @@
 /* TODO: move theme vars into component styles */
 :root {
   /* theme */
-  --theme-bg: hsl(200, 100%, 50%);
-  --theme-compliment: color(var(--theme-bg) hue(+200));
-  --theme-text_color: white;
+  --chat-ui_theme: hsl(200, 100%, 50%);
+  --chat-ui_theme_compliment: color(var(--chat-ui_theme) hue(+200));
+  --chat-ui_theme_text-color: white;
 
   /* chat-ui config */
+  --chat-ui_bg: hsl(0,0%,90%);
   --chat-ui_width: 350px;
   --chat-ui_height: 480px;
-  --chat-message_font-size: 0.8rem;
-  --chat-ui_bg: hsl(0,0%,90%);
 
-  --easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+  --chat-ui_message_bg: white;
+  --chat-ui_message_bg2: hsl(0,0%,85%);
+  --chat-ui_message_text-color: hsl(0,0%,10%);
+  --chat-ui_message_font-size: 0.8rem;
+
+  /* animations */
+  --chat-ui_easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }

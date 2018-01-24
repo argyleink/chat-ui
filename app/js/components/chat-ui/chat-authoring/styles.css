@@ -14,14 +14,14 @@ chat-authoring {
   box-shadow: 0.25rem 0.5rem 1rem hsla(0,0%,0%,20%);
 
   background: white;
-  caret-color: var(--theme-bg, blue);
+  caret-color: var(--chat-ui_theme, blue);
 
   font-size: 0.9rem;
   font-weight: lighter;
   line-height: 1.4em;
 
   width: calc(100% - 1rem);
-  transition: width 0.15s var(--easing-quick);
+  transition: width 0.15s var(--chat-ui_easing-quick);
 
   &:empty {
     width: 50%;

@@ -1,10 +1,11 @@
 @import '../../../../css/vars.css';
 
 chat-message {
-  /* background-color: var(--theme-bg, blue); */
-  /* color: var(--theme-text_color, white); */
-  background-color: white;
-  font-size: var(--chat-message_font-size);
+  /* background-color: var(--chat-ui_theme, blue); */
+  /* color: var(--chat-ui_theme_text-color, white); */
+  background-color: var(--chat-ui_message_bg, white);
+  color: var(--chat-ui_message_text-color);
+  font-size: var(--chat-ui_message_font-size);
   line-height: 1.4;
 
   padding: 0.5rem 0.75rem;
@@ -26,7 +27,7 @@ chat-message {
   &[new] {
     opacity: 0;
     transform: translateX(-1rem);
-    animation: slide_in 0.5s var(--easing-quick) forwards 0.15s;
+    animation: slide_in 0.5s var(--chat-ui_easing-quick) forwards 0.15s;
   }
 
   & img {
@@ -41,8 +42,9 @@ chat-message {
 }
 
 [mine] chat-message {
-  /* background: var(--theme-compliment); */
-  background: hsl(0,0%,85%);
+  /* background: var(--chat-ui_theme_compliment); */
+  background: var(--chat-ui_message_bg2);
+  color: var(--chat-ui_message_text-color);
   border-radius: 1rem 0.25rem 0.25rem 1rem;
 
   &[new] {

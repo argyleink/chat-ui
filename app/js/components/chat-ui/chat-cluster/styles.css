@@ -10,8 +10,8 @@ chat-cluster {
     }
 
     & chat-message {
-      background: var(--theme-text_color);
-      color: var(--theme-bg);
+      background: var(--chat-ui_theme_text-color);
+      color: var(--chat-ui_theme);
       box-shadow: 0 0.25rem 0.25rem hsl(0,0%,90%);
 
       &:after {
@@ -20,6 +20,8 @@ chat-cluster {
       }
     }
   }
+
+  &[mine] chat-avatar { display:none; }
 
   & > chat-avatar {
     margin-right: 0.5rem;
@@ -56,11 +58,11 @@ chat-cluster {
     & chat-avatar {
       opacity: 0;
       transform: scale3d(0.1,0.1,1);
-      transition: transform 0.4s var(--easing-quick), opacity 0.5s ease;
+      transition: transform 0.4s var(--chat-ui_easing-quick), opacity 0.5s ease;
     }
 
     & chat-message {
-      animation: slide_out 0.5s var(--easing-quick);
+      animation: slide_out 0.5s var(--chat-ui_easing-quick);
     }
   }
 }

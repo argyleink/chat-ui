@@ -7,7 +7,7 @@ chat-ui {
   height: var(--chat-ui_height);
 
   background: var(--chat-ui_bg);
-  /*border-bottom: 2px solid var(--theme-bg);*/
+  /*border-bottom: 2px solid var(--chat-ui_theme);*/
 
   overflow: hidden;
   position: relative;

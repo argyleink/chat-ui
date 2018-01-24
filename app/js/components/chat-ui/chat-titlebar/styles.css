@@ -2,8 +2,8 @@
 
 chat-titlebar {
   height: 1.25rem;
-  background: var(--theme-bg, blue);
-  color: var(--theme-text_color, white);
+  background: var(--chat-ui_theme, blue);
+  color: var(--chat-ui_theme_text-color, white);
   box-shadow: 0 0.1rem 1rem hsla(0,0%,0%,40%);
   overflow: hidden;
   padding: 1rem;
@@ -15,7 +15,7 @@ chat-titlebar {
   z-index: 11;
 
   will-change: transform;
-  transition: transform 0.15s var(--easing-quick);
+  transition: transform 0.15s var(--chat-ui_easing-quick);
 
   &[hide] {
     transform: translateY(-120%);
