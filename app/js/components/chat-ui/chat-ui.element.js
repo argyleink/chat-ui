@@ -57,7 +57,7 @@ export default class ChatUI extends HTMLElement {
       $('section', indeterminateFeedback)
         .appendChild(
           indeterminateFeedback.createMessage({
-            type: 'Text',
+            type: 'HTML',
             contents: '..'
           }))
 
