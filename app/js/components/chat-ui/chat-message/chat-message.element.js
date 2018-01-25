@@ -1,4 +1,4 @@
-import * as Renderers from '../renderers/'
+import { HTML } from '../renderers/'
 import './styles.css'
 
 // TODO:
@@ -19,8 +19,8 @@ export default class ChatMessage extends HTMLElement {
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
-  set message({ type, contents }) {
-    this.innerHTML = Renderers[type](contents)
+  set message({ contents }) {
+    this.innerHTML = HTML(contents)
   }
 }
 
