@@ -43,7 +43,8 @@ export default class ChatUI extends HTMLElement {
     
     if (payload.mine) 
       this.dispatchEvent(
-        new CustomEvent('outbound-message', { detail: payload }))
+        new CustomEvent('outbound-message', 
+          { detail: payload, bubbles: false }))
   }
 
   // TODO: move this logic to the cluster class
