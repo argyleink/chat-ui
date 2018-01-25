@@ -6,6 +6,7 @@ import './styles.css'
 // async image loading
 // intersection observer for loading and display toggling
 // help scrolling by showing media conditionally
+// add a video renderer
 export default class ChatMedia extends HTMLElement {
   createdCallback() {
     if (this.getAttribute('image'))
