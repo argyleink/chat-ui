@@ -31,6 +31,9 @@ export default class ChatUI extends HTMLElement {
     // append clusters to vnode
     // drop vnode results into this.innerHTML
     this.Scrollview.scrollToLatest()
+
+    // TODO: remove loading after all children have rendered
+    // https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/whenDefined
     this.classList.remove('loading')
   }
 
