@@ -90,7 +90,7 @@ setTimeout(() => {
     mine: false, 
     type: 'HTML',
     author: { avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif' },
-    contents: '<b>Hello</b>!<br>Look HTML works 👍'
+    contents: '<b>Hello</b>!<br>Look HTML works 👍<br>and links are clickable google.com!'
   })
 }, 5000)
 
