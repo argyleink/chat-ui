@@ -1,4 +1,4 @@
-@import '../../../../../css/vars.css';
+/* @import '../../../../../css/vars.css'; */
 
 chat-cards {
   width: 100%;
@@ -45,7 +45,7 @@ chat-card {
     & > p {
       margin: 0.5rem;
       color: hsl(0, 0%, 10%);
-      font-size: var(--chat-message_font-size);
+      font-size: var(--chat-ui_message_font-size);
     }
   }
 
@@ -54,7 +54,7 @@ chat-card {
     border-top: 1px solid hsl(0,0%,90%);
     
     & > a {
-      font-size: var(--chat-message_font-size);
+      font-size: var(--chat-ui_message_font-size);
       color: hsl(0, 0%, 40%);
       text-decoration: none;
       padding: 0.5rem 1rem;

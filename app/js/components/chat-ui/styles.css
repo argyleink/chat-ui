@@ -1,6 +1,4 @@
-@import '../../../css/vars.css';
-
-/* TODO: Theming with var() */
+/* @import '../../../css/vars.css'; */
 
 chat-ui {
   width: var(--chat-ui_width);
@@ -11,4 +9,29 @@ chat-ui {
 
   overflow: hidden;
   position: relative;
+
+  /* theme */
+  --chat-ui_theme: hsl(200, 100%, 50%);
+  --chat-ui_theme_compliment: color(var(--chat-ui_theme) hue(+200));
+  --chat-ui_theme_text-color: white;
+
+  /* chat-ui config */
+  --chat-ui_bg: hsl(0,0%,90%);
+  --chat-ui_width: 350px;
+  --chat-ui_height: 480px;
+
+  --chat-ui_message_bg: white;
+  --chat-ui_message_bg2: hsl(0,0%,85%);
+  --chat-ui_message_text-color: hsl(0,0%,10%);
+  --chat-ui_message_font-size: 0.8rem;
+
+  /* dark mode */
+  /* --chat-ui_theme: hsl(0,0%,15%);
+  --chat-ui_bg: hsl(0,0%,10%);
+  --chat-ui_message_bg: hsl(0,0%,20%);
+  --chat-ui_message_text-color: hsl(0,0%,60%);
+  --chat-ui_message_bg2: hsl(0,0%,13%); */
+
+  /* animations */
+  --chat-ui_easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
