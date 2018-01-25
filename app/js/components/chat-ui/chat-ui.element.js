@@ -34,6 +34,19 @@ export default class ChatUI extends HTMLElement {
 
     // TODO: remove loading after all children have rendered
     // https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/whenDefined
+    // ALSO
+    // https://developers.google.com/web/fundamentals/web-components/customelements
+    // Fetch all the children of <share-buttons> that are not defined yet.
+    // let undefinedChildren = this.querySelectorAll(':not(:defined)');
+
+    // let promises = [...undefinedChildren].map(socialButton => {
+    //   return customElements.whenDefined(socialButton.localName)
+    // ))
+
+    // // Wait for all the social-buttons to be upgraded.
+    // Promise.all(promises).then(() => {
+    //   // All children are ready.
+    // })
     this.classList.remove('loading')
   }
 
