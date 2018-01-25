@@ -33,7 +33,7 @@ export default class ChatCluster extends HTMLElement {
         <h3>${this.getAttribute('username')}</h3>
         ${this.seed_data.reduce((messages, message) =>
           `${messages}
-          <chat-message>${message}</chat-message>
+          <chat-message message='${message}'></chat-message>
         `, '')}
       </section>
     `
@@ -45,16 +45,13 @@ export default class ChatCluster extends HTMLElement {
   }
 
   // TODO: move this logic to the ChatMessage class
-  createMessage(message) {
-    let new_message     = document.createElement('chat-message')
-    new_message.message = message
-    
-    new_message.setAttribute('new', '')
-
-    new_message.addEventListener('animationend', e =>
-      new_message.removeAttribute('new'))
-
-    return new_message
+  // also decide in this architecture if we're passing HTML strings or nodes
+  createMessage({contents}) {
+    let wrap = document.createElement('div')
+    wrap.innerHTML = `
+      <chat-message new message='${contents}'></chat-message>
+    `
+    return wrap.children[0]
   }
 }
 

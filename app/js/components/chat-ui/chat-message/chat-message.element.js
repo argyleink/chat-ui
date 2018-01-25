@@ -5,23 +5,20 @@ import './styles.css'
 // sending state
 // sent state
 // read state
-// remove loading state
-
 export default class ChatMessage extends HTMLElement {
   createdCallback() {
-    this.classList.add('loading')
+    if (this.hasAttribute('message'))
+      this.innerHTML = HTML(this.getAttribute('message'))
   }
 
   attachedCallback() {
-    this.classList.remove('loading')
+    if (this.hasAttribute('new'))
+      this.addEventListener('animationend', e =>
+        this.removeAttribute('new'))
   }
 
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
-
-  set message({ contents }) {
-    this.innerHTML = HTML(contents)
-  }
 }
 
 document.registerElement('chat-message', ChatMessage)
