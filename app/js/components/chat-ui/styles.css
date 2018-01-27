@@ -8,6 +8,7 @@ chat-ui {
   /*border-bottom: 2px solid var(--chat-ui_theme);*/
 
   overflow: hidden;
+  contain: strict;
   position: relative;
 
   /* theme */
