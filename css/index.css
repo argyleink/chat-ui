@@ -1,0 +1,710 @@
+.centered-demo {
+  height: 100vh;
+}
+
+chat-ui {
+  -webkit-box-shadow: 0 3rem 10rem hsl(0, 0%, 60%);
+          box-shadow: 0 3rem 10rem hsl(0, 0%, 60%);
+}
+
+@media screen and (max-width:350px) {
+  body {
+    overflow: hidden;
+  }
+
+  .centered-demo chat-ui {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+body, html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+  margin: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(hsl(0, 0%, 90%)), to(hsl(0, 0%, 100%)));
+  background: linear-gradient(to top, hsl(0, 0%, 90%) 0%, hsl(0, 0%, 100%) 100%);
+  min-height: 100vh;
+}
+[grid]{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;contain:layout}[grid][order~=reverse]{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}[grid][horizontally-aligned~=left]{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}[grid][horizontally-aligned~=center]{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}[grid][horizontally-aligned~=right]{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}[grid][vertically-aligned~=top],[grid~=rows]{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}[grid][vertically-aligned~=center]{-webkit-box-align:center;-ms-flex-align:center;align-items:center}[grid][vertically-aligned~=bottom]{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}[grid][vertically-aligned~=baseline]{-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline}[grid][horizontally-distributed~=around]{-ms-flex-pack:distribute;justify-content:space-around}[grid][horizontally-distributed~=between]{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}[grid][horizontally-distributed~=equal]>*{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}[grid][vertically-distributed~=around]{-ms-flex-line-pack:distribute;align-content:space-around}[grid][vertically-distributed~=between]{-ms-flex-line-pack:justify;align-content:space-between}[grid][vertically-distributed~=equal]{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}[grid][columns~="2"]>*{-ms-flex-preferred-size:50%;flex-basis:50%}[grid][columns~="3"]>*{-ms-flex-preferred-size:33.333333333333336%;flex-basis:33.333333333333336%}[grid][columns~="4"]>*{-ms-flex-preferred-size:25%;flex-basis:25%}[grid][columns~="5"]>*{-ms-flex-preferred-size:20%;flex-basis:20%}[grid][columns~="6"]>*{-ms-flex-preferred-size:16.666666666666668%;flex-basis:16.666666666666668%}[grid][columns~="7"]>*{-ms-flex-preferred-size:14.285714285714286%;flex-basis:14.285714285714286%}[grid][columns~="8"]>*{-ms-flex-preferred-size:12.5%;flex-basis:12.5%}[grid][columns~="9"]>*{-ms-flex-preferred-size:11.11111111111111%;flex-basis:11.11111111111111%}[grid][columns~="10"]>*{-ms-flex-preferred-size:10%;flex-basis:10%}[grid][columns~="11"]>*{-ms-flex-preferred-size:9.090909090909092%;flex-basis:9.090909090909092%}[grid][columns~="12"]>*{-ms-flex-preferred-size:8.333333333333334%;flex-basis:8.333333333333334%}[grid~=columns][vertically-distributed~=equal]{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}[grid~=columns][vertically-distributed~=equal]>*{height:auto}[grid~=rows]{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}[grid~=rows][order~=reverse]{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}[grid~=rows][horizontally-aligned~=center]{-webkit-box-align:center;-ms-flex-align:center;align-items:center}[grid~=rows][horizontally-aligned~=right]{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}[grid~=rows][vertically-distributed~=around]{-ms-flex-pack:distribute;justify-content:space-around}[grid~=rows][vertically-distributed~=between]{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}[grid~=rows][vertically-distributed~=equal]>*{width:auto;width:initial}[grid~=masonry]{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column wrap;flex-flow:column wrap;height:20rem}/* @import '../../../../css/vars.css'; */
+
+chat-titlebar {
+  height: 1.25rem;
+  background: var(--chat-ui_theme, blue);
+  color: var(--chat-ui_theme_text-color, white);
+  -webkit-box-shadow: 0 0.1rem 1rem hsla(0, 0%, 0%, .4);
+          box-shadow: 0 0.1rem 1rem hsla(0, 0%, 0%, .4);
+  overflow: hidden;
+  padding: 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+
+  will-change: transform;
+  -webkit-transition: -webkit-transform 0.15s var(--chat-ui_easing-quick);
+  transition: -webkit-transform 0.15s var(--chat-ui_easing-quick);
+  transition: transform 0.15s var(--chat-ui_easing-quick);
+  transition: transform 0.15s var(--chat-ui_easing-quick), -webkit-transform 0.15s var(--chat-ui_easing-quick)
+}
+
+chat-titlebar[hide] {
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+}
+
+chat-titlebar > span {
+  margin-right: 2rem;
+  line-height: 1.1;
+  font-size: 1.4rem;
+}
+
+chat-titlebar > h5 {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin: 0;
+}
+
+chat-titlebar > figure {
+  margin: 0 0 0 auto;
+}/* @import '../../../../css/vars.css'; */
+
+chat-authoring {
+  position: absolute;
+  z-index: 12;
+  bottom: 0.5rem;
+  right: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+  margin: 0.5rem;
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 1rem 1rem 2px;
+  -webkit-box-shadow: 0.25rem 0.5rem 1rem hsla(0, 0%, 0%, .2);
+          box-shadow: 0.25rem 0.5rem 1rem hsla(0, 0%, 0%, .2);
+
+  background: white;
+  caret-color: var(--chat-ui_theme, blue);
+
+  font-size: 0.9rem;
+  font-weight: lighter;
+  line-height: 1.4em;
+
+  width: calc(100% - 1rem);
+  -webkit-transition: width 0.15s var(--chat-ui_easing-quick);
+  transition: width 0.15s var(--chat-ui_easing-quick)
+}
+
+chat-authoring:empty {
+  width: 50%
+}
+
+chat-authoring:empty:after {
+  content: "Say Something.."
+}
+
+chat-authoring:empty:after:focus {
+  content: "";
+}
+
+chat-authoring:focus {
+  width: calc(100% - 1rem);
+  outline: none;
+}chat-scrollview {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+
+  /* todo: fix list not at bottom when list is short; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}/* @import '../../../../../css/vars.css'; */
+
+chat-media > figure {
+
+    margin: 1rem 0;
+
+    max-width: 100%;
+
+    max-height: 60vh;
+
+    position: relative;
+}
+
+chat-media > figure > img {
+
+    width: 100%;
+
+    -o-object-fit: cover;
+
+       object-fit: cover;
+}
+
+chat-media > figure > figcaption {
+
+    position: absolute;
+
+    top: -1rem;
+
+    left: 2rem;
+}
+
+chat-media[mine] > figure > figcaption {
+
+    left: calc(100% - 4rem);
+}
+/* @import '../../../../../css/vars.css'; */
+
+chat-gallery {
+  contain: content;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap
+}
+
+chat-gallery chat-gallery-image > figure {
+  margin-right: 0.5rem
+}
+
+chat-gallery chat-gallery-image > figure > img {
+  height: 200px;
+  width: calc(var(--chat-ui_width) - 3rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+chat-gallery > [sticky] {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 2rem;
+  width: 0;
+  z-index: 10;
+}
+
+chat-gallery[mine] > [sticky] {
+  left: calc(100% - 4rem);
+}
+
+chat-gallery-image > figure {
+  margin: 1rem 0;
+  max-width: 100%;
+  max-height: 60vh;
+  position: relative
+}
+
+chat-gallery-image > figure > img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+chat-gallery-image > figure > figcaption {
+  position: absolute;
+  top: -1rem;
+  left: 2rem;
+}
+/* @import '../../../../../css/vars.css'; */
+
+chat-cards {
+  contain: content;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap
+
+  /*&::-webkit-scrollbar {
+    display: none;
+  }*/
+}
+
+chat-cards > [sticky] {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 2rem;
+  width: 0;
+  z-index: 10;
+}
+
+chat-cards[mine] > [sticky] {
+  left: calc(100% - 4rem);
+}
+
+chat-card {
+  min-width: calc(var(--chat-ui_width) - 3rem);
+  background: white;
+  -webkit-box-shadow: 0 0.2em 0.3em hsla(0, 0%, 0%, .2);
+          box-shadow: 0 0.2em 0.3em hsla(0, 0%, 0%, .2);
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box
+}
+
+chat-card > .card-content {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin-bottom: 0.5rem;
+}
+
+chat-card > .card-content > img {
+  max-width: 100%;
+}
+
+chat-card > .card-content > p {
+  margin: 0.5rem;
+  color: hsl(0, 0%, 10%);
+  font-size: var(--chat-ui_message_font-size);
+}
+
+chat-card > .card-footer {
+  padding-top: 0.5rem;
+  border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+chat-card > .card-footer > a {
+  font-size: var(--chat-ui_message_font-size);
+  color: hsl(0, 0%, 40%);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+chat-card > .card-footer > a:hover {
+  background: hsl(0, 0%, 96%);
+  -webkit-box-shadow: 0 0.1rem 0.25rem hsl(0, 0%, 70%);
+          box-shadow: 0 0.1rem 0.25rem hsl(0, 0%, 70%);
+}
+/* @import '../../../../css/vars.css'; */
+
+chat-messagelist {
+  padding-bottom: 4rem;
+  padding-top: 1rem;
+  min-height: calc(100% - 5rem)
+
+  /* animate in */
+}
+
+chat-messagelist > chat-cluster:nth-last-child(1) {
+  -webkit-transition: opacity 0.25s ease-in 0.0s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.0s;
+  transition: opacity 0.25s ease-in 0.0s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.0s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.0s,
+                opacity 0.25s ease-in 0.0s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.0s,
+                opacity 0.25s ease-in 0.0s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.0s;
+}
+
+chat-messagelist > chat-cluster:nth-last-child(2) {
+  -webkit-transition: opacity 0.25s ease-in 0.05s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.05s;
+  transition: opacity 0.25s ease-in 0.05s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.05s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.05s,
+                opacity 0.25s ease-in 0.05s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.05s,
+                opacity 0.25s ease-in 0.05s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.05s;
+}
+
+chat-messagelist > chat-cluster:nth-last-child(3) {
+  -webkit-transition: opacity 0.25s ease-in 0.1s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.1s;
+  transition: opacity 0.25s ease-in 0.1s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.1s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.1s,
+                opacity 0.25s ease-in 0.1s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.1s,
+                opacity 0.25s ease-in 0.1s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.1s;
+}
+
+chat-messagelist > chat-cluster:nth-last-child(4) {
+  -webkit-transition: opacity 0.25s ease-in 0.15s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.15s;
+  transition: opacity 0.25s ease-in 0.15s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.15s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.15s,
+                opacity 0.25s ease-in 0.15s;
+  transition: transform 0.25s var(--chat-ui_easing-quick) 0.15s,
+                opacity 0.25s ease-in 0.15s,
+                -webkit-transform 0.25s var(--chat-ui_easing-quick) 0.15s;
+}
+
+.loading chat-messagelist > * {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(3rem);
+          transform: translateY(3rem);
+}
+
+.loading chat-messagelist:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 32px;
+  bottom: 2rem;/* indeterminate animation */
+  -webkit-animation: fade_pulse 2s linear infinite;
+          animation: fade_pulse 2s linear infinite;/* tombstones */
+  background-repeat: no-repeat;
+  background-size: 
+      32px 32px, 
+      175px 32px,
+      32px 32px,
+      100px 32px,
+      50px 32px,
+      200px 32px,
+      32px 32px,
+      150px 32px,
+      30px 32px;
+  background-size: 
+      2rem 2rem, 
+      175px 2rem,
+      2rem 2rem,
+      100px 2rem,
+      50px 2rem,
+      200px 2rem,
+      2rem 2rem,
+      150px 2rem,
+      30px 2rem;
+  background-position: 
+      8px calc(100% - 64px), 
+      48px calc(100% - 64px),
+      calc(100% - 8px) calc(100% - 128px),
+      calc(100% - 48px) calc(100% - 128px),
+      calc(100% - 48px) calc(100% - 168px),
+      calc(100% - 48px) calc(100% - 208px),
+      8px calc(100% - 272px),
+      48px calc(100% - 272px),
+      48px calc(100% - 312px);
+  background-position: 
+      0.5rem calc(100% - 4rem), 
+      3rem calc(100% - 4rem),
+      calc(100% - 0.5rem) calc(100% - 8rem),
+      calc(100% - 3rem) calc(100% - 8rem),
+      calc(100% - 3rem) calc(100% - 10.5rem),
+      calc(100% - 3rem) calc(100% - 13rem),
+      0.5rem calc(100% - 17rem),
+      3rem calc(100% - 17rem),
+      3rem calc(100% - 19.5rem);
+  background-image:
+      radial-gradient(circle 16px, hsl(0, 0%, 85%) 99%, transparent 0),
+      linear-gradient(hsl(0, 0%, 85%) 32px, transparent 0),
+      radial-gradient(circle 16px, hsl(0, 0%, 85%) 99%, transparent 0),
+      linear-gradient(hsl(0, 0%, 80%) 32px, transparent 0),
+      linear-gradient(hsl(0, 0%, 80%) 32px, transparent 0),
+      linear-gradient(hsl(0, 0%, 80%) 32px, transparent 0),
+      radial-gradient(circle 16px, hsl(0, 0%, 85%) 99%, transparent 0),
+      linear-gradient(hsl(0, 0%, 85%) 32px, transparent 0),
+      linear-gradient(hsl(0, 0%, 85%) 32px, transparent 0);
+  background-image:
+      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 85%)), color-stop(0, transparent)),
+      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 80%)), color-stop(0, transparent)),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 80%)), color-stop(0, transparent)),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 80%)), color-stop(0, transparent)),
+      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 85%)), color-stop(0, transparent)),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 85%)), color-stop(0, transparent));
+  background-image:
+      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
+      linear-gradient(hsl(0, 0%, 85%) 2rem, transparent 0),
+      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
+      linear-gradient(hsl(0, 0%, 80%) 2rem, transparent 0),
+      linear-gradient(hsl(0, 0%, 80%) 2rem, transparent 0),
+      linear-gradient(hsl(0, 0%, 80%) 2rem, transparent 0),
+      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
+      linear-gradient(hsl(0, 0%, 85%) 2rem, transparent 0),
+      linear-gradient(hsl(0, 0%, 85%) 2rem, transparent 0);
+}
+
+@-webkit-keyframes fade_pulse {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade_pulse {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 1; }
+}/* @import '../../../../css/vars.css'; */
+
+chat-message {
+  /* background-color: var(--chat-ui_theme, blue); */
+  /* color: var(--chat-ui_theme_text-color, white); */
+  background-color: var(--chat-ui_message_bg, white);
+  color: var(--chat-ui_message_text-color);
+  font-size: var(--chat-ui_message_font-size);
+  line-height: 1.4;
+
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+  border-radius: 0.25rem 1rem 1rem 0.25rem
+}
+
+chat-message:first-of-type {
+  border-radius: 1rem 1rem 1rem 0.25rem;
+}
+
+chat-message:last-child:not(:first-of-type) {
+  border-radius: 0.25rem 1rem 1rem 1rem;
+}
+
+chat-message:not(:first-child) {
+  margin-top: 3px;
+}
+
+chat-message[new] {
+  opacity: 0;
+  -webkit-transform: translateX(-1rem);
+          transform: translateX(-1rem);
+  -webkit-animation: slide_in 0.5s var(--chat-ui_easing-quick) forwards 0.15s;
+          animation: slide_in 0.5s var(--chat-ui_easing-quick) forwards 0.15s;
+}
+
+chat-message img {
+  max-width: 100%;
+}
+
+chat-message pre {
+  display: inline;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  background: hsla(0, 0%, 0%, .1);
+  border-radius: 0.25rem;
+}
+
+[mine] chat-message {
+  /* background: var(--chat-ui_theme_compliment); */
+  background: var(--chat-ui_message_bg2);
+  color: var(--chat-ui_message_text-color);
+  border-radius: 1rem 0.25rem 0.25rem 1rem
+}
+
+[mine] chat-message[new] {
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+
+[mine] chat-message:first-of-type {
+  border-radius: 1rem 1rem 0.25rem 1rem;
+}
+
+[mine] chat-message:last-child:not(:first-of-type) {
+  border-radius: 1rem 0.25rem 1rem 1rem;
+}
+
+@-webkit-keyframes slide_in {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide_in {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slide_out {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+}
+
+@keyframes slide_out {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+}
+
+@media screen and (max-width:350px) {
+  :root {
+    --chat-message_font-size: 1rem;
+  }
+
+  chat-message {
+    font-size: 1rem;
+  }
+}/* @import '../../../../css/vars.css'; */
+
+chat-cluster {
+  margin: 0.25rem 3rem 0.75rem 0.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start
+}
+
+chat-cluster[indeterminate] h3 {
+  display: none;
+}
+
+chat-cluster[indeterminate] chat-message {
+  background: var(--chat-ui_theme_text-color);
+  color: var(--chat-ui_theme);
+  -webkit-box-shadow: 0 0.25rem 0.25rem hsla(0, 0%, 0%, .1);
+          box-shadow: 0 0.25rem 0.25rem hsla(0, 0%, 0%, .1)
+}
+
+chat-cluster[indeterminate] chat-message:after {
+  content: ".";
+  -webkit-animation: slide_out 0.5s ease alternate infinite;
+          animation: slide_out 0.5s ease alternate infinite;
+}
+
+chat-cluster[mine] chat-avatar {
+  display:none;
+}
+
+chat-cluster > chat-avatar {
+  margin-right: 0.5rem;
+  bottom: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+chat-cluster > section {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2
+}
+
+chat-cluster > section > h3 {
+  margin: 0 0 0 0.7rem;
+  font-size: 0.7rem;
+  font-weight: lighter;
+  color: hsl(0, 0%, 60%);
+}
+
+chat-cluster[mine] {
+  margin-left: 3rem;
+  margin-right: 0.5rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end
+}
+
+chat-cluster[mine] > section > h3 {
+  display: none;
+}
+
+chat-cluster[mine] > section {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+chat-cluster[removed] chat-avatar {
+  opacity: 0;
+  -webkit-transform: scale3d(0.1,0.1,1);
+          transform: scale3d(0.1,0.1,1);
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.4s var(--chat-ui_easing-quick);
+  transition: opacity 0.5s ease, -webkit-transform 0.4s var(--chat-ui_easing-quick);
+  transition: transform 0.4s var(--chat-ui_easing-quick), opacity 0.5s ease;
+  transition: transform 0.4s var(--chat-ui_easing-quick), opacity 0.5s ease, -webkit-transform 0.4s var(--chat-ui_easing-quick);
+}
+
+chat-cluster[removed] chat-message {
+  -webkit-animation: slide_out 0.5s var(--chat-ui_easing-quick);
+          animation: slide_out 0.5s var(--chat-ui_easing-quick);
+}chat-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 0;
+  overflow: hidden;
+  background: hsl(0, 0%, 100%);
+  display: inline-block
+}
+chat-avatar > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+chat-avatar.loading {
+  background: hsl(0, 0%, 90%);
+}/* @import '../../../css/vars.css'; */
+
+chat-ui {
+  width: var(--chat-ui_width);
+  height: var(--chat-ui_height);
+
+  background: var(--chat-ui_bg);
+  /*border-bottom: 2px solid var(--chat-ui_theme);*/
+
+  overflow: hidden;
+  contain: strict;
+  position: relative;
+
+  /* theme */
+  --chat-ui_theme: hsl(200, 100%, 50%);
+  --chat-ui_theme_compliment: color(var(--chat-ui_theme) hue(+200));
+  --chat-ui_theme_text-color: white;
+
+  /* chat-ui config */
+  --chat-ui_bg: hsl(0, 0%, 90%);
+  --chat-ui_width: 350px;
+  --chat-ui_height: 480px;
+
+  --chat-ui_message_bg: white;
+  --chat-ui_message_bg2: hsl(0, 0%, 85%);
+  --chat-ui_message_text-color: hsl(0, 0%, 10%);
+  --chat-ui_message_font-size: 0.8rem;
+
+  /* dark mode */
+  /* --chat-ui_theme: hsl(0,0%,15%);
+  --chat-ui_bg: hsl(0,0%,10%);
+  --chat-ui_message_bg: hsl(0,0%,20%);
+  --chat-ui_message_text-color: hsl(0,0%,60%);
+  --chat-ui_message_bg2: hsl(0,0%,13%); */
+
+  /* animations */
+  --chat-ui_easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
