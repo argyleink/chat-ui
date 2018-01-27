@@ -36,6 +36,8 @@ chat-message {
 
   & pre {
     display: inline;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     background: hsla(0,0%,0%,10%);
     border-radius: 0.25rem;
   }
