@@ -1,6 +1,7 @@
 /* @import '../../../../../css/vars.css'; */
 
 chat-gallery {
+  contain: content;
   width: 100%;
   overflow-y: hidden;
   overflow-x: auto;
