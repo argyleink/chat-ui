@@ -1,6 +1,8 @@
 import { HTML } from '../renderers/'
 import './styles.css'
 
+let data = null
+
 // TODO:
 // sending state
 // sent state
@@ -8,7 +10,7 @@ import './styles.css'
 export default class ChatMessage extends HTMLElement {
   createdCallback() {
     if (this.hasAttribute('message'))
-      this.innerHTML = HTML(this.getAttribute('message'))
+      this.message = this.getAttribute('message')
   }
 
   attachedCallback() {
@@ -19,6 +21,21 @@ export default class ChatMessage extends HTMLElement {
 
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
+
+  set message(payload) {
+    if (!payload) return
+
+    data = payload
+    this.innerHTML = this.render()
+  }
+
+  set new(val) {
+    this.setAttribute('new', val)
+  }
+
+  render() {
+    return HTML(data)
+  }
 }
 
 document.registerElement('chat-message', ChatMessage)

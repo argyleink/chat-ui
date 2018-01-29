@@ -26,6 +26,10 @@ export default class ChatCluster extends HTMLElement {
   detachedCallback() {}
   attributeChangedCallback(attr, oldVal, newVal) {}
 
+  set author(data) {
+    this.author = data
+  }
+
   render() {
     return `
       <chat-avatar src='${this.getAttribute('avatar')}'></chat-avatar>
@@ -44,14 +48,11 @@ export default class ChatCluster extends HTMLElement {
       this.createMessage(message))
   }
 
-  // TODO: move this logic to the ChatMessage class
-  // also decide in this architecture if we're passing HTML strings or nodes
   createMessage({contents}) {
-    let wrap = document.createElement('div')
-    wrap.innerHTML = `
-      <chat-message new message='${contents}'></chat-message>
-    `
-    return wrap.children[0]
+    let node      = document.createElement('chat-message')
+    node.new      = true
+    node.message  = contents
+    return node
   }
 }
 

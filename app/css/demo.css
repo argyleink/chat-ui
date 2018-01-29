@@ -6,9 +6,21 @@ chat-ui {
   box-shadow: 0 3rem 10rem hsl(0,0%,60%);
 }
 
+.test-buttons {
+  padding-right: 2rem;
+
+  & > button {
+    margin-bottom: 0.5rem;
+  }
+}
+
 @media screen and (orientation:portrait) {
   body {
     overflow: hidden;
+  }
+
+  .test-buttons {
+    display: none !important;
   }
 
   .centered-demo chat-ui {

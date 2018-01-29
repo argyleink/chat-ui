@@ -1,6 +1,8 @@
 /* @import '../../../../../css/vars.css'; */
 
 chat-media {
+  contain: paint;
+  
   & > figure {
     margin: 1rem 0;
     max-width: 100%;
