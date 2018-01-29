@@ -7,9 +7,21 @@ chat-ui {
           box-shadow: 0 3rem 10rem hsl(0, 0%, 60%);
 }
 
+.test-buttons {
+  padding-right: 2rem
+}
+
+.test-buttons > button {
+  margin-bottom: 0.5rem;
+}
+
 @media screen and (orientation:portrait) {
   body {
     overflow: hidden;
+  }
+
+  .test-buttons {
+    display: none !important;
   }
 
   .centered-demo chat-ui {
@@ -130,38 +142,31 @@ chat-authoring:focus {
   bottom: 0;
 }/* @import '../../../../../css/vars.css'; */
 
+chat-media {
+  contain: paint
+}
+
 chat-media > figure {
-
-    margin: 1rem 0;
-
-    max-width: 100%;
-
-    max-height: 60vh;
-
-    position: relative;
+  margin: 1rem 0;
+  max-width: 100%;
+  max-height: 60vh;
+  position: relative
 }
 
 chat-media > figure > img {
-
-    width: 100%;
-
-    -o-object-fit: cover;
-
-       object-fit: cover;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 chat-media > figure > figcaption {
-
-    position: absolute;
-
-    top: -1rem;
-
-    left: 2rem;
+  position: absolute;
+  top: -1rem;
+  left: 2rem;
 }
 
 chat-media[mine] > figure > figcaption {
-
-    left: calc(100% - 4rem);
+  left: calc(100% - 4rem);
 }
 /* @import '../../../../../css/vars.css'; */
 
