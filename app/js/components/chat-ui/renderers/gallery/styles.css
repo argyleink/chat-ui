@@ -12,7 +12,7 @@ chat-gallery {
   & chat-gallery-image > figure {
     margin-right: 0.5rem;
 
-    & > img {
+    & > chat-image {
       height: 200px;
       width: calc(var(--chat-ui_width) - 3rem);
       object-fit: cover;
@@ -39,7 +39,7 @@ chat-gallery-image {
     max-height: 60vh;
     position: relative;
 
-    & > img {
+    & > chat-image {
       width: 100%;
       object-fit: cover;
     }

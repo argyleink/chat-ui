@@ -4,6 +4,7 @@ import './chat-scrollview/chat-scrollview.element'
 import './chat-messagelist/chat-messagelist.element'
 import './chat-message/chat-message.element'
 import './chat-cluster/chat-cluster.element'
+import './chat-image/chat-image.element'
 import './chat-avatar/chat-avatar.element'
 
 import { $ } from 'utilities/shorthands'
