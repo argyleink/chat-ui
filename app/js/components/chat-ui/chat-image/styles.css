@@ -1,5 +1,8 @@
 chat-image {
+  position: relative;
   display: inline-block;
+  opacity: 1;
+  transition: opacity 0.75s ease-out;
 
   & > img {
     width: 100%;
@@ -8,6 +11,22 @@ chat-image {
   }
 
   &.loading {
-    background: hsl(0,0%,97%);
+    opacity: 0.1;
+    background: hsl(0,0%,5%);
+
+    &:after {
+      content: "Loading";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      color: white;
+      font-family: cursive;
+    }
   }
+
+  /*&:not(.loading) {
+    opacity: 1;
+  }*/
 }
