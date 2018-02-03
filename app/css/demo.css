@@ -12,6 +12,10 @@ chat-ui {
   & > button {
     margin-bottom: 0.5rem;
   }
+
+  & h5 {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (max-width:768px) {

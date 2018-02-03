@@ -4,6 +4,20 @@ let ChatUI
 
 setTimeout(() => {
   ChatUI = $('chat-ui')
+
+  $('#bot-send').addEventListener('click', e => {
+    ChatUI.newMessage({
+      mine: false,
+      type: 'HTML',
+      author: {
+        name: '${bot_name}',
+        avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
+      },
+      contents: $('#bot-says').value
+    })
+
+    $('#bot-says').value = ''
+  })
 }, 1000)
 
 window.testCard = () => {
