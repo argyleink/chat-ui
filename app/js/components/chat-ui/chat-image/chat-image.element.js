@@ -16,7 +16,7 @@ export default class ChatImage extends HTMLElement {
       this._img.src = this.getAttribute('src')
       this.observer.unobserve(this)
     }, { 
-      root: $('chat-scrollview'),
+      root: $('chat-ui'),
       threshold: 1, 
       rootMargin: '0px',
     })
