@@ -12,10 +12,23 @@ chat-ui {
 }
 
 .test-buttons > button {
+  margin-top: 0.5rem;
+}
+
+.test-buttons > h5 {
   margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width:768px) {
+.test-buttons > textarea {
+  min-width: 10rem;
+  margin-top: 1rem;
+  border: none;
+  background: hsl(0, 0%, 90%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+@media screen and (orientation:portrait) {
   body {
     overflow: hidden;
   }
@@ -143,20 +156,20 @@ chat-authoring:focus {
 }/* @import '../../../../../css/vars.css'; */
 
 chat-media {
+  width: 100%;
   contain: paint
 }
 
 chat-media > figure {
   margin: 1rem 0;
-  max-width: 100%;
+  width: 100%;
   max-height: 60vh;
   position: relative
 }
 
-chat-media > figure > img {
+chat-media > figure > chat-image {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  min-height: 200px;
 }
 
 chat-media > figure > figcaption {
@@ -187,7 +200,7 @@ chat-gallery chat-gallery-image > figure {
   margin-right: 0.5rem
 }
 
-chat-gallery chat-gallery-image > figure > img {
+chat-gallery chat-gallery-image > figure > chat-image {
   height: 200px;
   width: calc(var(--chat-ui_width) - 3rem);
   -o-object-fit: cover;
@@ -214,7 +227,7 @@ chat-gallery-image > figure {
   position: relative
 }
 
-chat-gallery-image > figure > img {
+chat-gallery-image > figure > chat-image {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -276,8 +289,11 @@ chat-card > .card-content {
   margin-bottom: 0.5rem;
 }
 
-chat-card > .card-content > img {
-  max-width: 100%;
+chat-card > .card-content > chat-image {
+  height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 chat-card > .card-content > p {
@@ -383,7 +399,6 @@ chat-messagelist > chat-cluster:nth-last-child(4) {
   background-size: 
       32px 32px, 
       175px 32px,
-      32px 32px,
       100px 32px,
       50px 32px,
       200px 32px,
@@ -393,7 +408,6 @@ chat-messagelist > chat-cluster:nth-last-child(4) {
   background-size: 
       2rem 2rem, 
       175px 2rem,
-      2rem 2rem,
       100px 2rem,
       50px 2rem,
       200px 2rem,
@@ -403,53 +417,48 @@ chat-messagelist > chat-cluster:nth-last-child(4) {
   background-position: 
       8px calc(100% - 64px), 
       48px calc(100% - 64px),
-      calc(100% - 8px) calc(100% - 128px),
-      calc(100% - 48px) calc(100% - 128px),
-      calc(100% - 48px) calc(100% - 168px),
-      calc(100% - 48px) calc(100% - 208px),
+      calc(100% - 16px) calc(100% - 128px),
+      calc(100% - 16px) calc(100% - 168px),
+      calc(100% - 16px) calc(100% - 208px),
       8px calc(100% - 272px),
       48px calc(100% - 272px),
       48px calc(100% - 312px);
   background-position: 
       0.5rem calc(100% - 4rem), 
       3rem calc(100% - 4rem),
-      calc(100% - 0.5rem) calc(100% - 8rem),
-      calc(100% - 3rem) calc(100% - 8rem),
-      calc(100% - 3rem) calc(100% - 10.5rem),
-      calc(100% - 3rem) calc(100% - 13rem),
+      calc(100% - 1rem) calc(100% - 8rem),
+      calc(100% - 1rem) calc(100% - 10.5rem),
+      calc(100% - 1rem) calc(100% - 13rem),
       0.5rem calc(100% - 17rem),
       3rem calc(100% - 17rem),
       3rem calc(100% - 19.5rem);
   background-image:
-      radial-gradient(circle 16px, hsl(0, 0%, 85%) 99%, transparent 0),
-      linear-gradient(hsl(0, 0%, 85%) 32px, transparent 0),
-      radial-gradient(circle 16px, hsl(0, 0%, 85%) 99%, transparent 0),
-      linear-gradient(hsl(0, 0%, 80%) 32px, transparent 0),
-      linear-gradient(hsl(0, 0%, 80%) 32px, transparent 0),
-      linear-gradient(hsl(0, 0%, 80%) 32px, transparent 0),
-      radial-gradient(circle 16px, hsl(0, 0%, 85%) 99%, transparent 0),
-      linear-gradient(hsl(0, 0%, 85%) 32px, transparent 0),
-      linear-gradient(hsl(0, 0%, 85%) 32px, transparent 0);
+      radial-gradient(circle 16px, var(--chat-ui_message_bg) 99%, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 32px, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 32px, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 32px, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 32px, transparent 0),
+      radial-gradient(circle 16px, var(--chat-ui_message_bg) 99%, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 32px, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 32px, transparent 0);
   background-image:
-      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
-      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 85%)), color-stop(0, transparent)),
-      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
-      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 80%)), color-stop(0, transparent)),
-      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 80%)), color-stop(0, transparent)),
-      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 80%)), color-stop(0, transparent)),
-      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
-      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 85%)), color-stop(0, transparent)),
-      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, hsl(0, 0%, 85%)), color-stop(0, transparent));
+      radial-gradient(circle 1rem, var(--chat-ui_message_bg) 99%, transparent 0),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, var(--chat-ui_message_bg)), color-stop(0, transparent)),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, var(--chat-ui_message_bg2)), color-stop(0, transparent)),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, var(--chat-ui_message_bg2)), color-stop(0, transparent)),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, var(--chat-ui_message_bg2)), color-stop(0, transparent)),
+      radial-gradient(circle 1rem, var(--chat-ui_message_bg) 99%, transparent 0),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, var(--chat-ui_message_bg)), color-stop(0, transparent)),
+      -webkit-gradient(linear, left top, left bottom, color-stop(2rem, var(--chat-ui_message_bg)), color-stop(0, transparent));
   background-image:
-      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
-      linear-gradient(hsl(0, 0%, 85%) 2rem, transparent 0),
-      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
-      linear-gradient(hsl(0, 0%, 80%) 2rem, transparent 0),
-      linear-gradient(hsl(0, 0%, 80%) 2rem, transparent 0),
-      linear-gradient(hsl(0, 0%, 80%) 2rem, transparent 0),
-      radial-gradient(circle 1rem, hsl(0, 0%, 85%) 99%, transparent 0),
-      linear-gradient(hsl(0, 0%, 85%) 2rem, transparent 0),
-      linear-gradient(hsl(0, 0%, 85%) 2rem, transparent 0);
+      radial-gradient(circle 1rem, var(--chat-ui_message_bg) 99%, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 2rem, transparent 0),
+      radial-gradient(circle 1rem, var(--chat-ui_message_bg) 99%, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 2rem, transparent 0);
 }
 
 @-webkit-keyframes fade_pulse {
@@ -658,6 +667,47 @@ chat-cluster[removed] chat-avatar {
 chat-cluster[removed] chat-message {
   -webkit-animation: slide_out 0.5s var(--chat-ui_easing-quick);
           animation: slide_out 0.5s var(--chat-ui_easing-quick);
+}chat-image {
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+  -webkit-transition: opacity 0.75s ease-out;
+  transition: opacity 0.75s ease-out
+}
+chat-image > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: none;
+}
+chat-image.loading {
+  opacity: 0.1;
+  background: hsl(0, 0%, 0%)
+}
+chat-image.loading:after {
+  content: "Loading";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  font-family: cursive;
+}
+chat-image {
+  /* &:not(.loading) {
+    opacity: 1;
+  } */
 }chat-avatar {
   width: 2rem;
   height: 2rem;
