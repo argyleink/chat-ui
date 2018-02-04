@@ -714,17 +714,13 @@ chat-image {
   border-radius: 50%;
   margin: 0;
   overflow: hidden;
-  background: hsl(0, 0%, 100%);
   display: inline-block
 }
-chat-avatar > img {
+chat-avatar > chat-image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-chat-avatar.loading {
-  background: hsl(0, 0%, 90%);
 }/* @import '../../../css/vars.css'; */
 
 chat-ui {

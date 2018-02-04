@@ -4,7 +4,7 @@ import 'ragrid'
 import { $ } from 'utilities/shorthands'
 import 'components/chat-ui/chat-ui.element'
 
-// import 'demo/narrative'
+import 'demo/narrative'
 import 'demo/samples'
 
 // simulate loading
