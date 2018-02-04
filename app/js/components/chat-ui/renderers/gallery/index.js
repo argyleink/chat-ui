@@ -3,7 +3,7 @@ export {ChatGallery} from './chat-gallery.element'
 export const Image = image => `
   <chat-gallery-image>
     <figure>
-      <img src="${image}">
+      <chat-image src="${image}"></chat-image>
     </figure>
   </chat-gallery-image>
 `

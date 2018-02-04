@@ -2,7 +2,7 @@ export {ChatMedia} from './chat-media.element'
 
 export const MediaItem = ({avatar, image}) => `
   <figure>
-    <img src="${image}">
+    <chat-image src="${image}"></chat-image>
     <figcaption>
       <chat-avatar src='${avatar}'></chat-avatar>
     </figcaption>

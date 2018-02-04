@@ -48,7 +48,6 @@ chat-messagelist {
     background-size: 
       2rem 2rem, 
       175px 2rem,
-      2rem 2rem,
       100px 2rem,
       50px 2rem,
       200px 2rem,
@@ -59,24 +58,22 @@ chat-messagelist {
     background-position: 
       0.5rem calc(100% - 4rem), 
       3rem calc(100% - 4rem),
-      calc(100% - 0.5rem) calc(100% - 8rem),
-      calc(100% - 3rem) calc(100% - 8rem),
-      calc(100% - 3rem) calc(100% - 10.5rem),
-      calc(100% - 3rem) calc(100% - 13rem),
+      calc(100% - 1rem) calc(100% - 8rem),
+      calc(100% - 1rem) calc(100% - 10.5rem),
+      calc(100% - 1rem) calc(100% - 13rem),
       0.5rem calc(100% - 17rem),
       3rem calc(100% - 17rem),
       3rem calc(100% - 19.5rem);
 
     background-image:
-      radial-gradient(circle 1rem, hsl(0,0%,85%) 99%, transparent 0),
-      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
-      radial-gradient(circle 1rem, hsl(0,0%,85%) 99%, transparent 0),
-      linear-gradient(hsl(0,0%,80%) 2rem, transparent 0),
-      linear-gradient(hsl(0,0%,80%) 2rem, transparent 0),
-      linear-gradient(hsl(0,0%,80%) 2rem, transparent 0),
-      radial-gradient(circle 1rem, hsl(0,0%,85%) 99%, transparent 0),
-      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0),
-      linear-gradient(hsl(0,0%,85%) 2rem, transparent 0);
+      radial-gradient(circle 1rem, var(--chat-ui_message_bg) 99%, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg2) 2rem, transparent 0),
+      radial-gradient(circle 1rem, var(--chat-ui_message_bg) 99%, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 2rem, transparent 0),
+      linear-gradient(var(--chat-ui_message_bg) 2rem, transparent 0);
   }
 }
 

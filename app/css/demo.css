@@ -10,7 +10,20 @@ chat-ui {
   padding-right: 2rem;
 
   & > button {
+    margin-top: 0.5rem;
+  }
+
+  & > h5 {
     margin-bottom: 0.5rem;
+  }
+
+  & > textarea {
+    min-width: 10rem;
+    margin-top: 1rem;
+    border: none;
+    background: hsl(0,0%,90%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
   }
 }
 
