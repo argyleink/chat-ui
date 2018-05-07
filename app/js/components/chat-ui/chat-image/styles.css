@@ -24,10 +24,17 @@ chat-image {
       top: 0; left: 0; right: 0; bottom: 0;
       color: white;
       font-family: cursive;
+      animation: scale_pulse 1s ease-in-out;
     }
   }
 
   /*&:not(.loading) {
     opacity: 1;
   }*/
+}
+
+@keyframes scale_pulse {
+  0%    { transform: scale(1); }
+  50%   { transform: scale(0.75); }
+  100%  { transform: scale(1); }
 }

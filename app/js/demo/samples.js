@@ -30,7 +30,7 @@ window.testCard = () => {
       avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
     },
     cards: [{
-      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      image: 'http://hello.eboy.com/eboy/wp-content/uploads/shop/ECB-NY-V5-03t.png',
       text: $('#bot-says').value || ''
     }]
   })
@@ -47,15 +47,15 @@ window.testCards = () => {
       avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
     },
     cards: [{
-      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      image: 'http://hello.eboy.com/eboy/wp-content/uploads/shop/ECB-NY-V5-03t.png',
       text: $('#bot-says').value || ''
     },
     {
-      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      image: 'http://hello.eboy.com/eboy/wp-content/uploads/shop/ECB-NY-V5-03t.png',
       text: $('#bot-says').value || ''
     },
     {
-      image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png',
+      image: 'http://hello.eboy.com/eboy/wp-content/uploads/shop/ECB-NY-V5-03t.png',
       text: $('#bot-says').value || ''
     }]
   })
@@ -72,7 +72,7 @@ window.testImage = () => {
       name: '${bot_name}',
       avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
     },
-    image: 'http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png'
+    image: 'http://hello.eboy.com/eboy/wp-content/uploads/shop/ECB-NY-V5-03t.png'
   })
 }
 
@@ -86,8 +86,8 @@ window.testGallery = () => {
       avatar: 'https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif'
     },
     images: [
-      {src:"http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png"},
-      {src:"http://8bitdecals.com/wp-content/uploads/2012/06/shop_tokyo_fullsize.png"}
+      {src:"http://hello.eboy.com/eboy/wp-content/uploads/shop/ECB-NY-V5-03t.png"},
+      {src:"http://hello.eboy.com/eboy/wp-content/uploads/shop/ECB-NY-V5-03t.png"}
     ]
   })
 }
