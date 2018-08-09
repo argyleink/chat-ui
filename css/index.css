@@ -28,7 +28,7 @@ chat-ui {
   border-radius: 0.5rem;
 }
 
-@media screen and (orientation:portrait) {
+@media screen and (max-width:768px) {
   body {
     overflow: hidden;
   }
@@ -189,11 +189,18 @@ chat-gallery {
   overflow-y: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  -webkit-scroll-snap-type: x mandatory;
+      -ms-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap
+}
+
+chat-gallery > chat-gallery-image {
+  scroll-snap-align: center;
 }
 
 chat-gallery chat-gallery-image > figure {
@@ -246,15 +253,23 @@ chat-cards {
   overflow-y: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  -webkit-scroll-snap-type: x mandatory;
+      -ms-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap
+}
 
-  /*&::-webkit-scrollbar {
+chat-cards > chat-card {
+  scroll-snap-align: center;
+}
+
+chat-cards {/* &::-webkit-scrollbar {
     display: none;
-  }*/
+  } */
 }
 
 chat-cards > [sticky] {
@@ -286,7 +301,7 @@ chat-card > .card-content {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem
 }
 
 chat-card > .card-content > chat-image {
@@ -304,7 +319,7 @@ chat-card > .card-content > p {
 
 chat-card > .card-footer {
   padding-top: 0.5rem;
-  border-top: 1px solid hsl(0, 0%, 90%);
+  border-top: 1px solid hsl(0, 0%, 90%)
 }
 
 chat-card > .card-footer > a {
@@ -313,7 +328,7 @@ chat-card > .card-footer > a {
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  border: 1px solid transparent;
+  border: 1px solid transparent
 }
 
 chat-card > .card-footer > a:hover {
@@ -738,7 +753,7 @@ chat-image {
   overflow: hidden;
   display: inline-block
 }
-chat-avatar > chat-image {
+chat-avatar > img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
