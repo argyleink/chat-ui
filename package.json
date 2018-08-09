@@ -13,10 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "autolinker": "^1.6.0",
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.18.13",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.6",
     "browser-sync-webpack-plugin": "^1.2.0",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.3",
