@@ -11,7 +11,7 @@ export default class ChatImage extends HTMLElement {
   attachedCallback() {
     // async load image based on viewport presence
     this.observer = new IntersectionObserver(e => {
-      if (e[0].intersectionRatio < 1) return
+      if (e[0].intersectionRatio < 0.9) return
 
       this._img.src = this.getAttribute('src')
       this.observer.unobserve(this)

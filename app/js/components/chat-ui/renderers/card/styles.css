@@ -6,8 +6,13 @@ chat-cards {
   overflow-y: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
   display: flex;
   flex-wrap: nowrap;
+
+  & > chat-card {
+    scroll-snap-align: center;
+  }
 
   /*&::-webkit-scrollbar {
     display: none;
