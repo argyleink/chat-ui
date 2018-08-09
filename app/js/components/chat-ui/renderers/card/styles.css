@@ -67,10 +67,15 @@ chat-card {
       text-decoration: none;
       padding: 0.5rem 1rem;
       border-radius: 0.25rem;
+      border: 1px solid transparent;
 
       &:hover {
-        background: hsl(0,0%,96%);
-        box-shadow: 0 0.1rem 0.25rem hsl(0,0%,70%);
+        border-color: hsl(0, 0%, 90%);
+        color: var(--chat-ui_theme);
+      }
+
+      &:active {
+        background-color: hsl(0, 0%, 96%);
       }
     }
   }

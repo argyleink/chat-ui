@@ -8,8 +8,8 @@ export const Card = ({avatar, image, text}) => `
       <p>${text}</p>
     </div>
     <div class="card-footer" grid vertically-aligned="center">
-      <a href="href">Like</a>
-      <a href="href">Comment</a>
+      <a href="#">Like</a>
+      <a href="#">Comment</a>
     </div>
   </chat-card>
 `

@@ -1,7 +1,14 @@
 .test-buttons(grid='rows' horizontally-aligned='right')
-  button(onclick='testCard()') Add Card
-  button(onclick='testCards()') Add Cards
-  button(onclick='testGallery()') Add Gallery
-  button(onclick='testImage()') Add Image
-  button(disabled) Add Video
-  button(disabled) Add HTML
+  h5 Act as the bot:
+  textarea#bot-says(placeholder='Say something... (links, emoji, and HTML are allowed)')
+
+  button#bot-send Send Message
+  button(onclick='testCard()') Send Card
+  button(onclick='testCards()') Send Cards
+  button(onclick='testGallery()') Send Gallery
+  button(onclick='testImage()') Send Image
+  button(disabled) Send Video
+
+  hr
+  h5 Fun:
+  button(onclick='darkMode()') Dark Mode

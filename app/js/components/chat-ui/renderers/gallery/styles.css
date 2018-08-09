@@ -11,7 +11,7 @@ chat-gallery {
   flex-wrap: nowrap;
 
   & > chat-gallery-image {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
   }
 
   & chat-gallery-image > figure {

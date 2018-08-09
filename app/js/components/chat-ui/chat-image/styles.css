@@ -1,13 +1,40 @@
 chat-image {
+  position: relative;
   display: inline-block;
+  opacity: 1;
+  transition: opacity 0.75s ease-out;
 
   & > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: none;
   }
 
   &.loading {
-    background: hsl(0,0%,97%);
+    opacity: 0.1;
+    background: hsl(0,0%,0%);
+
+    &:after {
+      content: "Loading";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      color: white;
+      font-family: cursive;
+      animation: scale_pulse 1s ease-in-out;
+    }
   }
+
+  /*&:not(.loading) {
+    opacity: 1;
+  }*/
+}
+
+@keyframes scale_pulse {
+  0%    { transform: scale(1); }
+  50%   { transform: scale(0.75); }
+  100%  { transform: scale(1); }
 }
